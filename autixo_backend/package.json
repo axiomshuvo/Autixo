@@ -1,0 +1,27 @@
+{
+  "name": "autixo_backend",
+  "version": "1.0.0",
+  "description": "Autixo – A modern car rental portal with vehicle listings, booking system, user authentication, and owner dashboard",
+  "homepage": "https://github.com/axiomshuvo/Autixo#readme",
+  "bugs": {
+    "url": "https://github.com/axiomshuvo/Autixo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axiomshuvo/Autixo.git"
+  },
+  "license": "ISC",
+  "author": "Pradipta Sarker",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.5.0",
+    "nodemon": "^3.1.14"
+  }
+}
