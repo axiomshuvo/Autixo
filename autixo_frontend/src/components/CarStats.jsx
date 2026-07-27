@@ -1,4 +1,4 @@
-import { carStats } from "@/lib/data";
+import { carStats } from "@/app/lib/data";
 import { Separator } from "@heroui/react";
 
 export default function CarStats() {

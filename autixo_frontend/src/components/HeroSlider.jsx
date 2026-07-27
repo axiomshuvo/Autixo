@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { sliderImages } from "../lib/data";
+import { sliderImages } from "../app/lib/data";
 
 export default function HeroSlider() {
   return (

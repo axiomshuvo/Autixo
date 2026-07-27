@@ -1,4 +1,4 @@
-import { getAllCars } from "@/lib/datafetch";
+import { getAllCars } from "@/app/lib/datafetch";
 
 export default async function ExploreCars() {
   const cars = await getAllCars();
