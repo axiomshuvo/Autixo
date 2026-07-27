@@ -1,44 +1,111 @@
 # Autixo
 
-A modern car rental platform — browse vehicles, book rentals, and manage listings.
+**Autixo** is a full-stack car rental platform for discovering vehicles, exploring available options, and managing rental journeys through a polished, responsive interface.
 
-## Stack
+## Live Application
 
-|              |                                          |
-| ------------ | ---------------------------------------- |
-| **Frontend** | Next.js 16, React 19, Tailwind CSS 4     |
-| **UI**       | HeroUI v3, Swiper, React Icons           |
-| **Auth**     | Better Auth                              |
-| **Backend**  | Express 5, MongoDB                       |
+[Visit Autixo](https://autixo.vercel.app)
+
+## Overview
+
+The project is organized as a separate Next.js frontend and Express API backend. The frontend provides the public experience, authentication pages, dashboard routes, theming, and reusable interface components. The backend serves car data from MongoDB Atlas.
+
+## Combined Tech Stack
+
+| Area                    | Technologies                          |
+| ----------------------- | ------------------------------------- |
+| Frontend framework      | Next.js 16, React 19, App Router      |
+| Styling and UI          | Tailwind CSS 4, HeroUI v3             |
+| Interaction and visuals | Swiper, React Icons, Figtree font     |
+| Authentication          | Better Auth, Google OAuth support     |
+| Backend                 | Node.js, Express 5                    |
+| Database                | MongoDB Atlas, MongoDB Node.js driver |
+| Server utilities        | dotenv, CORS, Nodemon                 |
+| Deployment              | Vercel                                |
+
+## Features
+
+- Responsive home page with a Swiper-powered hero carousel
+- Available-car and car-stat sections powered by API data helpers
+- Light and dark themes with persisted user preference
+- Global navigation, footer, toast notifications, and custom 404 page
+- Authentication routes with Better Auth integration
+- Dedicated pages for exploring cars, adding cars, bookings, contact, and company information
+- REST API endpoints for all vehicles and a random six-car selection
 
 ## Project Structure
 
-```
-autixo/
-├── autixo_frontend/    # Next.js 16 App Router
-│   └── src/
-│       ├── app/        # Route groups: (auth), (dashboard), pages
-│       ├── components/ # Navbar, HeroSlider, Footer, Toast
-│       ├── providers/  # Theme & logo controllers
-│       └── lib/        # Shared data
-│
-└── autixo_backend/     # Express 5 API server
-    └── index.js        # Entry point
+```text
+Autixo/
+|- autixo_frontend/
+|  |- public/                         # Public static assets
+|  |- src/
+|  |  |- app/
+|  |  |  |- (auth)/                   # Login and registration routes
+|  |  |  |- (dashboard)/              # Add-car and booking routes
+|  |  |  |- about/                    # About page
+|  |  |  |- api/auth/[...all]/        # Better Auth route handler
+|  |  |  |- contact/                  # Contact page
+|  |  |  |- explore-cars/             # Vehicle discovery page
+|  |  |  `- lib/                      # Auth, data, and fetch helpers
+|  |  |- assets/images/               # Brand images
+|  |  |- components/                  # Navbar, footer, carousel, cards, toast
+|  |  `- providers/                   # Theme and logo controllers
+|  |- package.json
+|  `- README.md
+|- autixo_backend/
+|  |- index.js                        # Express server and MongoDB routes
+|  |- package.json
+|  `- README.md
+|- LICENSE
+`- README.md
 ```
 
 ## Getting Started
 
-**Prerequisites:** Node.js 18+, npm 9+
+### Prerequisites
 
-### Backend
+- Node.js 18 or later
+- npm 9 or later
+- A MongoDB Atlas connection string
+
+### 1. Configure Environment Variables
+
+Create environment files in each application directory.
+
+`autixo_backend/.env`
+
+```env
+PORT=5001
+MONGODB_URI=your_mongodb_connection_string
+```
+
+`autixo_frontend/.env.local`
+
+```env
+DATA_URI=your_backend_api_url
+MONGODB_URI=your_mongodb_connection_string
+BETTER_AUTH_SECRET=your_auth_secret
+BETTER_AUTH_URL=your_frontend_url
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+### 2. Run the Backend
 
 ```bash
 cd autixo_backend
 npm install
-npm run dev
+node index.js
 ```
 
-### Frontend
+For development with automatic restart:
+
+```bash
+npx nodemon index.js
+```
+
+### 3. Run the Frontend
 
 ```bash
 cd autixo_frontend
@@ -46,31 +113,29 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Application Routes
 
-## Routes
+| Route           | Purpose                                             |
+| --------------- | --------------------------------------------------- |
+| `/`             | Home page with hero, available cars, and statistics |
+| `/explore-cars` | Car discovery page                                  |
+| `/add-car`      | Car listing page                                    |
+| `/my-bookings`  | Booking management page                             |
+| `/about`        | Company and platform information                    |
+| `/contact`      | Contact page                                        |
+| `/login`        | User sign-in page                                   |
+| `/register`     | User registration page                              |
 
-| Path            | Page                   |
-| --------------- | ---------------------- |
-| `/`             | Home — hero carousel   |
-| `/about`        | About Autixo           |
-| `/contact`      | Contact                |
-| `/login`        | Sign in                |
-| `/register`     | Create account         |
-| `/add-car`      | List a car for rent    |
-| `/my-bookings`  | Booking dashboard      |
+## API Surface
 
-## Progress
-
-- ✅ Theming (light/dark mode)
-- ✅ Hero carousel (Swiper, fade effect)
-- ✅ Navigation shell + custom 404
-- ✅ Toast notifications
-- 🚧 Authentication flow
-- 🚧 Car browsing & booking system
-- 🚧 Owner dashboard & car listings
-- 🚧 Responsive polish
+| Method | Route          | Purpose                          |
+| ------ | -------------- | -------------------------------- |
+| `GET`  | `/`            | Health check                     |
+| `GET`  | `/cars`        | Retrieve all car listings        |
+| `GET`  | `/cars/random` | Retrieve six random car listings |
 
 ## License
 
-MIT © [Pradipta Sarker](https://github.com/axiomshuvo)
+This project is licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2026 [Pradipta Sarker](https://github.com/axiomshuvo)

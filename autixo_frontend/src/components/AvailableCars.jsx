@@ -14,9 +14,9 @@ export default async function AvailableCars() {
       </p>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
         {randomCars.map((car) => (
-          <Card key={car.id} className="">
+          <Card key={car._id} className="">
             <Image
-              alt={car.name}
+              alt={car.carName}
               className="pointer-events-none aspect-square w-14 rounded-2xl object-cover select-none"
               loading="lazy"
               width={640}

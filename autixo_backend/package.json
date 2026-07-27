@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/axiomshuvo/Autixo.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Pradipta Sarker",
   "type": "commonjs",
   "main": "index.js",
