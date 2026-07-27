@@ -10,16 +10,19 @@ export default function Navbar() {
         <Link href="/">Home</Link>
       </li>
       <li>
-        <Link href="/add-car"> Add Car</Link>{" "}
+        <Link href="/explore-cars">Explore Cars</Link>
       </li>
       <li>
-        <Link href="/my-bookings">My Bookings</Link>{" "}
+        <Link href="/add-car"> Add Car</Link>
       </li>
       <li>
-        <Link href="/about">About</Link>{" "}
+        <Link href="/my-bookings">My Bookings</Link>
       </li>
       <li>
-        <Link href="/contact">Contact</Link>{" "}
+        <Link href="/about">About</Link>
+      </li>
+      <li>
+        <Link href="/contact">Contact</Link>
       </li>
     </>
   );
@@ -30,10 +33,10 @@ export default function Navbar() {
   const links = (
     <>
       <li>
-        <Link href="/login">Login</Link>{" "}
+        <Link href="/login">Login</Link>
       </li>
       <li>
-        <Link href="/register">Sign Up</Link>{" "}
+        <Link href="/register">Sign Up</Link>
       </li>
       <li>
         <ThemeController />

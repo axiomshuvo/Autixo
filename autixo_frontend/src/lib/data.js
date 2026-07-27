@@ -29,3 +29,33 @@ export const sliderImages = [
       "Get behind the wheel of your favorite car and feel the excitement of the open road. Explore our inventory and find the car that ignites your passion for driving.",
   },
 ];
+
+// Cars Stats
+
+export const carStats = [
+  {
+    id: 1,
+    title: "Luxury Cars",
+    value: "500+",
+  },
+  {
+    id: 2,
+    title: "Road Assistance",
+    value: "24/7",
+  },
+  {
+    id: 3,
+    title: "Service Guarantee",
+    value: "100%",
+  },
+  {
+    id: 4,
+    title: "Pickup Locations",
+    value: "60+",
+  },
+  {
+    id: 5,
+    title: "Satisfied Customers",
+    value: "800+",
+  },
+];

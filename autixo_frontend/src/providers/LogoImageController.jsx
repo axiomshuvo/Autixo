@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import logoimgdark from "../../public/assets/autixo_logo_dark.png";
-import logoimgwhite from "../../public/assets/autixo_logo_white.png";
+import logoDark from "../assets/images/autixo_logo_dark.png";
+import logoWhite from "../assets/images/autixo_logo_white.png";
 
 export default function LogoImageController() {
   const [theme, setTheme] = useState("light");
@@ -29,10 +29,10 @@ export default function LogoImageController() {
   return (
     <div className="relative w-48 h-20">
       <Image
-        src={theme === "dark" ? logoimgwhite : logoimgdark}
+        src={theme === "dark" ? logoWhite : logoDark}
         fill
         alt="Autixo Logo"
-        className=" rounded-full"
+        className="rounded-full"
       />
     </div>
   );
