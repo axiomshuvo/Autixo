@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import logoDark from "../assets/images/autixo_logo_dark.png";
 import logoWhite from "../assets/images/autixo_logo_white.png";
@@ -28,12 +29,14 @@ export default function LogoImageController() {
 
   return (
     <div className="relative w-48 h-20">
-      <Image
-        src={theme === "dark" ? logoWhite : logoDark}
-        fill
-        alt="Autixo Logo"
-        className="rounded-full"
-      />
+      <Link href="/" className="absolute inset-0 z-10" aria-label="Autixo Logo">
+        <Image
+          src={theme === "dark" ? logoWhite : logoDark}
+          fill
+          alt="Autixo Logo"
+          className="rounded-full"
+        />
+      </Link>
     </div>
   );
 }

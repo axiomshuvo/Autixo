@@ -9,8 +9,8 @@ export default function CarStats() {
         <div className="flex flex-col overflow-hidden">
           <h3 className="text-2xl mb-5">
             Experience Premium Car rentals crafted for comfort, performance, and
-            style. Whether it's a quick business trip or a weekend getaway, we
-            have the perfect vehicle for you.
+            style. Whether it&apos;s a quick business trip or a weekend getaway,
+            we have the perfect vehicle for you.
           </h3>
           <Separator
             orientation="horizontal"

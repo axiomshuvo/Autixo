@@ -43,14 +43,14 @@ export default function LoginPage() {
     }
 
     toast.success("Welcome back!");
-    router.push("/");
+    router.push("/dashboard");
   };
 
   const handleGoogleSignIn = async () => {
     setLoading("google");
     const { error } = await authClient.signIn.social({
       provider: "google",
-      callbackURL: "/",
+      callbackURL: "/dashboard",
     });
 
     if (error) {
@@ -67,12 +67,7 @@ export default function LoginPage() {
       </p>
 
       <Form className="mt-6 space-y-5" onSubmit={handleSubmit}>
-        <TextField
-          isRequired
-          className="space-y-1.5"
-          name="email"
-          type="email"
-        >
+        <TextField isRequired className="space-y-1.5" name="email" type="email">
           <Label>Email</Label>
           <Input placeholder="you@example.com" />
           <FieldError />

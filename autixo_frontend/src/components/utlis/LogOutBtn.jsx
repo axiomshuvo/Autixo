@@ -1,0 +1,45 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { FcMultipleInputs } from "react-icons/fc";
+
+import { authClient } from "@/app/lib/auth-client";
+
+export default function LogOutBtn() {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleLogout = async () => {
+    if (isLoading) return;
+
+    setIsLoading(true);
+
+    try {
+      await authClient.signOut();
+
+      // Refresh Server Components
+      router.refresh();
+
+      // Redirect to login page
+      router.replace("/login");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleLogout}
+      disabled={isLoading}
+      className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-2 py-1 transition hover:bg-default-100 disabled:cursor-not-allowed disabled:opacity-50"
+    >
+      <span>{isLoading ? "Logging out..." : "Logout"}</span>
+
+      <FcMultipleInputs className="size-4 -rotate-90" />
+    </button>
+  );
+}
