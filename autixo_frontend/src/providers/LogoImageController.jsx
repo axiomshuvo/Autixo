@@ -31,10 +31,12 @@ export default function LogoImageController() {
     <div className="relative w-48 h-20">
       <Link href="/" className="absolute inset-0 z-10" aria-label="Autixo Logo">
         <Image
+          loading="eager"
           src={theme === "dark" ? logoWhite : logoDark}
           fill
           alt="Autixo Logo"
           className="rounded-full"
+          sizes="150px"
         />
       </Link>
     </div>

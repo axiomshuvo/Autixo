@@ -2,42 +2,69 @@
 
 import { Avatar, Dropdown, Label } from "@heroui/react";
 import Link from "next/link";
-import { FcBusinessman, FcSettings } from "react-icons/fc";
+import {
+  FcAutomotive,
+  FcBusinessman,
+  FcDatabase,
+  FcPlus,
+  FcSettings,
+} from "react-icons/fc";
 
 import { useSession } from "@/app/lib/auth-client";
 import LogOutBtn from "@/components/utlis/LogOutBtn";
 import LogoImageController from "@/providers/LogoImageController";
 import ThemeController from "@/providers/ThemeController";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   const { data: session, isPending } = useSession();
 
   const user = session?.user;
+  console.log("Navbar session:", user);
+
+  const linkClass = (href) =>
+    pathname === href
+      ? "text-primary font-semibold"
+      : "text-foreground/60 hover:text-foreground transition-colors";
 
   const Navlinks = (
     <>
       <li>
-        <Link href="/">Home</Link>
+        <Link href="/" className={linkClass("/")}>
+          Home
+        </Link>
       </li>
 
       <li>
-        <Link href="/explore-cars">Explore Cars</Link>
+        <Link href="/explore-cars" className={linkClass("/explore-cars")}>
+          Explore Cars
+        </Link>
       </li>
 
       <li>
-        <Link href="/add-car">Add Car</Link>
+        <Link href="/add-car" className={linkClass("/add-car")}>
+          Add Car
+        </Link>
       </li>
 
       <li>
-        <Link href="/my-bookings">My Bookings</Link>
+        <Link href="/my-bookings" className={linkClass("/my-bookings")}>
+          My Bookings
+        </Link>
       </li>
 
       <li>
-        <Link href="/about">About</Link>
+        <Link href="/about" className={linkClass("/about")}>
+          About
+        </Link>
       </li>
 
       <li>
-        <Link href="/contact">Contact</Link>
+        <Link href="/contact" className={linkClass("/contact")}>
+          Contact
+        </Link>
       </li>
     </>
   );
@@ -47,7 +74,10 @@ export default function Navbar() {
       <Dropdown.Trigger className="rounded-full">
         <Avatar>
           <Avatar.Image
-            src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg"
+            src={
+              user?.image ||
+              "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg"
+            }
             alt={user?.name || "User"}
           />
           <Avatar.Fallback delayMs={600}>
@@ -61,7 +91,10 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Avatar size="sm">
               <Avatar.Image
-                src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg"
+                src={
+                  user?.image ||
+                  "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg"
+                }
                 alt={user?.name || "User"}
               />
               <Avatar.Fallback delayMs={600}>
@@ -71,7 +104,6 @@ export default function Navbar() {
 
             <div className="flex flex-col gap-0">
               <p className="text-sm font-medium">{user?.name}</p>
-
               <p className="text-xs text-muted">{user?.email}</p>
             </div>
           </div>
@@ -79,9 +111,20 @@ export default function Navbar() {
 
         <Dropdown.Menu>
           <Dropdown.Item id="dashboard">
-            <Link href="/dashboard">
-              <Label>Dashboard</Label>
-            </Link>
+            <div className="flex w-full items-center justify-between gap-2">
+              <Link href="/dashboard">
+                <Label>Dashboard</Label>
+              </Link>
+              <FcDatabase className="size-3.5" />
+            </div>
+          </Dropdown.Item>
+          <Dropdown.Item id="profile">
+            <div className="flex w-full items-center justify-between gap-2">
+              <Link href="/profile">
+                <Label>Profile</Label>
+              </Link>
+              <FcBusinessman className="size-3.5" />
+            </div>
           </Dropdown.Item>
 
           <Dropdown.Item id="bookings">
@@ -89,15 +132,17 @@ export default function Navbar() {
               <Link href="/my-bookings">
                 <Label>My Bookings</Label>
               </Link>
-
               <FcSettings className="size-3.5" />
             </div>
           </Dropdown.Item>
 
           <Dropdown.Item id="add-car">
-            <Link href="/add-car">
-              <Label>Add Car</Label>
-            </Link>
+            <div className="flex w-full items-center justify-between gap-2">
+              <Link href="/add-car">
+                <Label>Add Car</Label>
+              </Link>
+              <FcPlus className="size-3.5" />
+            </div>
           </Dropdown.Item>
 
           <Dropdown.Item id="my-cars">
@@ -105,8 +150,7 @@ export default function Navbar() {
               <Link href="/my-added-cars">
                 <Label>My Added Cars</Label>
               </Link>
-
-              <FcBusinessman className="size-3.5" />
+              <FcAutomotive className="size-3.5" />
             </div>
           </Dropdown.Item>
 
@@ -133,11 +177,15 @@ export default function Navbar() {
           ) : (
             <>
               <li>
-                <Link href="/login">Login</Link>
+                <Link href="/login" className={linkClass("/login")}>
+                  Login
+                </Link>
               </li>
 
               <li>
-                <Link href="/register">Sign Up</Link>
+                <Link href="/register" className={linkClass("/register")}>
+                  Sign Up
+                </Link>
               </li>
             </>
           )}

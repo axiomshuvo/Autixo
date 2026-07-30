@@ -37,6 +37,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+.pnpm-debug.log*
 lerna-debug.log*
 
 # ==========================================================
@@ -59,13 +60,20 @@ env/
 # ==========================================================
 # IDE / Editors
 # ==========================================================
-.vscode/
+# Ignore everything in .vscode except shareable workspace files
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
 .idea/
 *.swp
 *.swo
 *~
 *.sublime-project
 *.sublime-workspace
+.fuse_hidden*
 
 # ==========================================================
 # Operating System Files
@@ -115,6 +123,12 @@ temp/
 .netlify/
 
 # ==========================================================
+# Caches
+# ==========================================================
+.eslintcache
+.stylelintcache
+
+# ==========================================================
 # Project Specific
 # ==========================================================
 branch_structure.json
@@ -125,11 +139,8 @@ temp_interactive_push.bat
 # ==========================================================
 # Optional (Uncomment if Needed)
 # ==========================================================
-
 # uploads/
 # public/uploads/
 # generated/
-# .eslintcache
-# .stylelintcache
 # *.pem
 # *.key

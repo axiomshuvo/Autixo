@@ -35,7 +35,7 @@ export default function LogOutBtn() {
       type="button"
       onClick={handleLogout}
       disabled={isLoading}
-      className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-md px-2 py-1 transition hover:bg-default-100 disabled:cursor-not-allowed disabled:opacity-50"
+      className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-md   transition hover:bg-default-100 disabled:cursor-not-allowed disabled:opacity-50"
     >
       <span>{isLoading ? "Logging out..." : "Logout"}</span>
 
