@@ -119,3 +119,37 @@ export const updateCar = async (id, payload) => {
 
   return data;
 };
+
+// get User Details by ID
+export const getUserDetails = async (id) => {
+  try {
+    const response = await fetch(`${getBaseUrl()}/user/${id}`);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const userDetails = await response.json();
+    return userDetails;
+  } catch (error) {
+    console.error(`Error fetching user details for ID ${id}:`, error);
+    return null;
+  }
+};
+
+// update User Details by ID
+export const updateUserDetails = async (id, payload) => {
+  const res = await fetch(`${getBaseUrl()}/user/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.error || "Failed to update user details");
+  }
+
+  return data;
+};

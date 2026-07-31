@@ -34,6 +34,7 @@ async function run() {
   try {
     const database = client.db("autixo");
     const carsCollections = database.collection("cars");
+    const usersCollections = database.collection("user");
 
     // GET All Cars Info with pagination [per page limit 12]
     app.get("/cars", async (req, res) => {
@@ -182,6 +183,41 @@ async function run() {
       );
 
       res.send(result);
+    });
+
+    // get user details by id
+    app.get("/user/:id", async (req, res) => {
+      try {
+        const id = req.params.id;
+        const user = await usersCollections.findOne({ _id: new ObjectId(id) });
+        if (!user) {
+          return res.status(404).send({ error: "User not found" });
+        }
+        res.send(user);
+      } catch (error) {
+        res.status(500).send({ error: error.message });
+      }
+    });
+
+    // Update user details by id
+    app.put("/user/:id", async (req, res) => {
+      try {
+        const id = req.params.id;
+        const updatedUser = req.body;
+
+        const result = await usersCollections.updateOne(
+          { _id: new ObjectId(id) },
+          { $set: updatedUser },
+        );
+
+        if (result.matchedCount === 0) {
+          return res.status(404).send({ error: "User not found" });
+        }
+
+        res.send({ success: true, message: "User updated successfully" });
+      } catch (error) {
+        res.status(500).send({ error: error.message });
+      }
     });
 
     //
