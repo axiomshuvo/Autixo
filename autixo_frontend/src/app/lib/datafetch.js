@@ -1,10 +1,12 @@
+const getBaseUrl = () => {
+  return process.env.DATA_URI || "http://localhost:5001";
+};
 // getAllCars
 export const getAllCars = async (page = 1, limit = 12) => {
-  // console.log("Fetching page:", page);
-  const res = await fetch(
-    `${process.env.DATA_URI}/cars?page=${page}&limit=${limit}`,
-    { cache: "no-store" },
-  );
+  const baseUrl = getBaseUrl();
+  const res = await fetch(`${baseUrl}/cars?page=${page}&limit=${limit}`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch cars");
@@ -16,7 +18,7 @@ export const getAllCars = async (page = 1, limit = 12) => {
 // Random 6 Cars
 export const getRandomCars = async () => {
   try {
-    const response = await fetch(`${process.env.DATA_URI}/cars/random`);
+    const response = await fetch(`${getBaseUrl()}/cars/random`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -32,7 +34,7 @@ export const getRandomCars = async () => {
 
 export const getCarDetails = async (id) => {
   try {
-    const response = await fetch(`${process.env.DATA_URI}/explore-cars/${id}`);
+    const response = await fetch(`${getBaseUrl()}/explore-cars/${id}`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -42,4 +44,25 @@ export const getCarDetails = async (id) => {
     console.error(`Error fetching car details for ID ${id}:`, error);
     return null;
   }
+};
+
+export const createCar = async (payload) => {
+  const response = await fetch(`${getBaseUrl()}/add-car`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(data.error || "Failed to create car");
+  }
+  return {
+    ok: response.ok,
+    status: response.status,
+    data,
+  };
 };

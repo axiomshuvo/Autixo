@@ -9,6 +9,7 @@ const { ObjectId } = require("mongodb");
 const app = express();
 const port = process.env.PORT;
 app.use(cors());
+app.use(express.json());
 
 // basic response for the root route
 app.get("/", (req, res) => {
@@ -85,6 +86,23 @@ async function run() {
         res.send(car);
       } catch (error) {
         res.status(500).send({ error: error.message });
+      }
+    });
+
+    // Add Car to the database
+    app.post("/add-car", async (req, res) => {
+      try {
+        const newCar = req.body;
+        const result = await carsCollections.insertOne(newCar);
+        console.log(`New car added with id: ${result.insertedId}`);
+        res
+          .status(201)
+          .send({ message: "Car added successfully", id: result.insertedId });
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          message: error.message,
+        });
       }
     });
 
