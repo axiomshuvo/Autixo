@@ -58,9 +58,9 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer>
-      <div className="w-[90%] mx-auto rounded-2xl border border-border bg-surface text-foreground mb-[3%]">
-        <div className="px-6 py-8 sm:px-10 lg:px-12 lg:py-12">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_1.15fr_1.15fr_1fr_1.35fr]">
+      <div className="mx-auto mb-[3%] w-[90%] rounded-2xl border border-border bg-surface text-foreground">
+        <div className="px-4 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-12">
+          <div className="grid gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1.15fr_1.15fr_1fr_1.35fr] lg:gap-10">
             <section className="space-y-5">
               <div className="flex items-center gap-3">
                 <LogoImageController />
@@ -72,7 +72,7 @@ export default function Footer() {
                 polished light or dark interface.
               </p>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {socialLinks.map(({ icon: Icon, label, href }) => (
                   <Button
                     key={label}
@@ -146,7 +146,7 @@ export default function Footer() {
               </p>
 
               <form
-                className="flex flex-col gap-3 sm:flex-row"
+                className="flex flex-col gap-3 md:flex-row"
                 onSubmit={(event) => event.preventDefault()}
               >
                 <label className="sr-only" htmlFor="footer-email">
@@ -170,15 +170,18 @@ export default function Footer() {
             </section>
           </div>
 
-          <div className="mt-10 border-t border-border pt-6 flex flex-col gap-3 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-8 flex flex-col gap-3 border-t border-border pt-6 text-sm text-muted sm:mt-10 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} Autixo. All rights reserved.</p>
-            <ul className="flex gap-4">
+            <ul className="flex flex-wrap gap-3 sm:gap-4">
               <li>
                 <Link className="hover:text-foreground" href="/terms">
                   Terms & Conditions
                 </Link>
               </li>
-              <Separator orientation="vertical" className="h-4" />
+              <Separator
+                orientation="vertical"
+                className="hidden h-4 sm:block"
+              />
               <li>
                 <Link className="hover:text-foreground" href="/privacy">
                   Privacy Policy

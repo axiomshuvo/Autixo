@@ -1,5 +1,5 @@
 import Footer from "@/components/shared/Footer";
-import Navbar from "@/components/shared/Navbar";
+import NavbarComponent from "@/components/shared/Navbar";
 import Toast from "@/components/Toast";
 import { Figtree } from "next/font/google";
 import "./globals.css";
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       className={`${figtree.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
+        <NavbarComponent />
         <div className="flex-1">{children}</div>
         <Footer />
         <Toast />

@@ -28,15 +28,19 @@ export default function LogoImageController() {
   }, []);
 
   return (
-    <div className="relative w-48 h-20">
-      <Link href="/" className="absolute inset-0 z-10" aria-label="Autixo Logo">
+    <div className="flex h-12 w-28 items-center justify-center sm:h-14 sm:w-32 lg:h-16 lg:w-36">
+      <Link
+        href="/"
+        className="relative h-full w-full"
+        aria-label="Autixo Logo"
+      >
         <Image
           loading="eager"
           src={theme === "dark" ? logoWhite : logoDark}
           fill
           alt="Autixo Logo"
-          className="rounded-full"
-          sizes="150px"
+          className="object-contain"
+          sizes="(max-width: 640px) 112px, (max-width: 1024px) 128px, 144px"
         />
       </Link>
     </div>

@@ -12,7 +12,7 @@ app.use(cors());
 
 // basic response for the root route
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! This is Autixo server ");
 });
 
 // MONGODB SETUP
