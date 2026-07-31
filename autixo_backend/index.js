@@ -94,7 +94,9 @@ async function run() {
       try {
         const newCar = req.body;
         const result = await carsCollections.insertOne(newCar);
-        console.log(`New car added with id: ${result.insertedId}`);
+        console.log(
+          `New car added with id: ${result.insertedId} , ${newCar.ownerId}`,
+        );
         res
           .status(201)
           .send({ message: "Car added successfully", id: result.insertedId });
@@ -104,6 +106,82 @@ async function run() {
           message: error.message,
         });
       }
+    });
+
+    // Get My Added Cars by Owner ID
+    app.get("/my-added-cars/:ownerId", async (req, res) => {
+      try {
+        const { ownerId } = req.params;
+
+        if (!ownerId) {
+          return res.status(400).send({
+            success: false,
+            message: "Owner ID is required",
+          });
+        }
+
+        const cars = await carsCollections.find({ ownerId }).toArray();
+
+        res.status(200).send(cars);
+      } catch (error) {
+        console.error("Error fetching cars:", error);
+
+        res.status(500).send({
+          success: false,
+          message: "Internal Server Error",
+        });
+      }
+    });
+
+    // // Delete Car by ID
+    app.delete("/delete-car/:id", async (req, res) => {
+      try {
+        const { id } = req.params;
+
+        if (!id) {
+          return res.status(400).send({
+            success: false,
+            message: "Car ID is required",
+          });
+        }
+
+        const result = await carsCollections.deleteOne({
+          _id: new ObjectId(id),
+        });
+
+        if (result.deletedCount === 0) {
+          return res.status(404).send({
+            success: false,
+            message: "Car not found",
+          });
+        }
+
+        res.status(200).send({
+          success: true,
+          message: "Car deleted successfully",
+        });
+      } catch (error) {
+        console.error("Error deleting car:", error);
+
+        res.status(500).send({
+          success: false,
+          message: "Internal Server Error",
+        });
+      }
+    });
+
+    // update car by id
+    app.put("/cars/:id", async (req, res) => {
+      const { id } = req.params;
+
+      const result = await carsCollections.updateOne(
+        { _id: new ObjectId(id) },
+        {
+          $set: req.body,
+        },
+      );
+
+      res.send(result);
     });
 
     //

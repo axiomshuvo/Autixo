@@ -149,15 +149,20 @@ export default function AddCardPage() {
                   <FieldError />
                 </TextField>
 
-                <TextField
-                  isRequired
-                  className="space-y-1.5"
-                  name="availabilityStatus"
-                >
-                  <Label>Availability Status</Label>
-                  <Input placeholder="Enter status" />
-                  <FieldError />
-                </TextField>
+                <Select isRequired name="availabilityStatus">
+                  <Label>Availability</Label>
+                  <Select.Trigger>
+                    <Select.Value />
+                    <Select.Indicator />
+                  </Select.Trigger>
+
+                  <Select.Popover>
+                    <ListBox>
+                      <ListBox.Item id="available">Available</ListBox.Item>
+                      <ListBox.Item id="unavailable">Unavailable</ListBox.Item>
+                    </ListBox>
+                  </Select.Popover>
+                </Select>
               </Fieldset.Group>
             </Fieldset>
 

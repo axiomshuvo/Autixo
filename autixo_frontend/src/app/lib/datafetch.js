@@ -46,6 +46,7 @@ export const getCarDetails = async (id) => {
   }
 };
 
+// added Car
 export const createCar = async (payload) => {
   const response = await fetch(`${getBaseUrl()}/add-car`, {
     method: "POST",
@@ -65,4 +66,56 @@ export const createCar = async (payload) => {
     status: response.status,
     data,
   };
+};
+
+// Get My Added Cars
+export const getMyAddedCars = async (ownerId) => {
+  try {
+    const response = await fetch(`${getBaseUrl()}/my-added-cars/${ownerId}`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch cars");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching my added cars:", error);
+    return [];
+  }
+};
+
+// Delete Car by ID
+export const deleteCar = async (id) => {
+  const response = await fetch(`${getBaseUrl()}/delete-car/${id}`, {
+    method: "DELETE",
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Delete failed");
+  }
+
+  return data;
+};
+
+// Update Car by ID
+export const updateCar = async (id, payload) => {
+  const res = await fetch(`${getBaseUrl()}/cars/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.error || "Failed to update car");
+  }
+
+  return data;
 };

@@ -23,6 +23,8 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(null); // null | "credentials" | "google"
 
+  const isBusy = loading !== null;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading("credentials");
@@ -30,32 +32,45 @@ export default function LoginPage() {
     const data = Object.fromEntries(new FormData(event.currentTarget));
     const { email, password, rememberMe } = data;
 
-    const { error } = await authClient.signIn.email({
-      email,
-      password,
-      rememberMe: rememberMe === "on",
-    });
+    try {
+      const { error } = await authClient.signIn.email({
+        email,
+        password,
+        rememberMe: rememberMe === "on",
+      });
 
-    if (error) {
+      if (error) {
+        toast.danger(error.message || "Unable to log in. Please try again.");
+        return;
+      }
+
+      toast.success("Welcome back!");
+      router.refresh();
+      router.push("/dashboard");
+    } catch (err) {
+      toast.danger("Something went wrong. Please try again.");
+    } finally {
       setLoading(null);
-      toast.danger(error.message || "Unable to log in. Please try again.");
-      return;
     }
-
-    toast.success("Welcome back!");
-    router.push("/dashboard");
   };
 
   const handleGoogleSignIn = async () => {
     setLoading("google");
-    const { error } = await authClient.signIn.social({
-      provider: "google",
-      callbackURL: "/dashboard",
-    });
 
-    if (error) {
+    try {
+      const { error } = await authClient.signIn.social({
+        provider: "google",
+        callbackURL: "/dashboard",
+      });
+
+      if (error) {
+        toast.danger(error.message || "Unable to sign in with Google.");
+        setLoading(null);
+      }
+      // On success the browser redirects away, so no need to reset loading here.
+    } catch (err) {
+      toast.danger("Something went wrong. Please try again.");
       setLoading(null);
-      toast.danger(error.message || "Unable to sign in with Google.");
     }
   };
 
@@ -69,7 +84,7 @@ export default function LoginPage() {
       <Form className="mt-6 space-y-5" onSubmit={handleSubmit}>
         <TextField isRequired className="space-y-1.5" name="email" type="email">
           <Label>Email</Label>
-          <Input placeholder="you@example.com" />
+          <Input autoComplete="email" placeholder="you@example.com" />
           <FieldError />
         </TextField>
 
@@ -81,12 +96,15 @@ export default function LoginPage() {
         >
           <Label>Password</Label>
           <div className="relative">
-            <Input className="w-full pr-10" placeholder="••••••••" />
+            <Input
+              autoComplete="current-password"
+              className="w-full pr-10"
+              placeholder="••••••••"
+            />
             <button
               type="button"
               className="absolute inset-y-0 right-3 flex items-center text-muted"
               onClick={() => setShowPassword((v) => !v)}
-              tabIndex={-1}
               aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? (
@@ -112,7 +130,7 @@ export default function LoginPage() {
 
         <Button
           className="w-full bg-accent text-accent-foreground"
-          isDisabled={loading === "credentials"}
+          isDisabled={isBusy}
           type="submit"
         >
           {loading === "credentials" ? "Logging in..." : "Log In"}
@@ -127,7 +145,7 @@ export default function LoginPage() {
 
       <Button
         className="w-full border border-border bg-surface-secondary text-foreground"
-        isDisabled={loading === "google"}
+        isDisabled={isBusy}
         onPress={handleGoogleSignIn}
         variant="light"
       >

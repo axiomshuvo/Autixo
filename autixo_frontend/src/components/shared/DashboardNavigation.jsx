@@ -15,15 +15,16 @@ import { useSession } from "@/app/lib/auth-client";
 const navItems = [
   { href: "/dashboard", label: "Dashboard", icon: FcDatabase },
   { href: "/profile", label: "Profile", icon: FcBusinessman },
-  { href: "/my-bookings", label: "Bookings", icon: FcLeave },
   { href: "/add-car", label: "Add Car", icon: FcPlus },
-  { href: "/my-added-car", label: "My Cars", icon: FcAutomotive },
+
+  { href: "/my-added-cars", label: "My Cars", icon: FcAutomotive },
+  { href: "/my-bookings", label: "My Bookings", icon: FcLeave },
 ];
 
 export default function DashboardNavigation() {
   const { data: session, isPending } = useSession();
-  const user = session?.user;
-  console.log("user", user);
+  // const user = session?.user;
+  // console.log("user", user);
 
   // active menu item based on current route
   const pathname = usePathname();

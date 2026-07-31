@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FcMultipleInputs } from "react-icons/fc";
 
 import { authClient } from "@/app/lib/auth-client";
+import { toast } from "@heroui/react";
 
 export default function LogOutBtn() {
   const router = useRouter();
@@ -23,6 +24,7 @@ export default function LogOutBtn() {
 
       // Redirect to login page
       router.replace("/login");
+      toast.success("Logged out successfully!");
     } catch (error) {
       console.error("Logout failed:", error);
     } finally {

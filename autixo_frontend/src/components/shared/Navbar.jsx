@@ -28,6 +28,14 @@ const navItems = [
   { href: "/contact", label: "Contact" },
 ];
 
+const DropdownLinks = [
+  { href: "/dashboard", label: "Dashboard", icon: FcDatabase },
+  { href: "/profile", label: "Profile", icon: FcBusinessman },
+  { href: "/my-bookings", label: "My Bookings", icon: FcSettings },
+  { href: "/add-car", label: "Add Car", icon: FcPlus },
+  { href: "/my-added-cars", label: "My Added Cars", icon: FcAutomotive },
+];
+
 export default function NavbarComponent() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,7 +73,7 @@ export default function NavbarComponent() {
       );
     });
 
-  const DropdownLinks = (
+  const DropdownMenu = (
     <Dropdown>
       <Dropdown.Trigger className="rounded-full">
         <div
@@ -115,51 +123,14 @@ export default function NavbarComponent() {
         </div>
 
         <Dropdown.Menu>
-          <Dropdown.Item id="dashboard">
-            <div className="flex w-full items-center justify-between gap-2">
-              <Link href="/dashboard">
-                <Label>Dashboard</Label>
-              </Link>
-              <FcDatabase className="size-3.5" />
-            </div>
-          </Dropdown.Item>
-
-          <Dropdown.Item id="profile">
-            <div className="flex w-full items-center justify-between gap-2">
-              <Link href="/profile">
-                <Label>Profile</Label>
-              </Link>
-              <FcBusinessman className="size-3.5" />
-            </div>
-          </Dropdown.Item>
-
-          <Dropdown.Item id="bookings">
-            <div className="flex w-full items-center justify-between gap-2">
-              <Link href="/my-bookings">
-                <Label>My Bookings</Label>
-              </Link>
-              <FcSettings className="size-3.5" />
-            </div>
-          </Dropdown.Item>
-
-          <Dropdown.Item id="add-car">
-            <div className="flex w-full items-center justify-between gap-2">
-              <Link href="/add-car">
-                <Label>Add Car</Label>
-              </Link>
-              <FcPlus className="size-3.5" />
-            </div>
-          </Dropdown.Item>
-
-          <Dropdown.Item id="my-cars">
-            <div className="flex w-full items-center justify-between gap-2">
-              <Link href="/my-added-cars">
-                <Label>My Added Cars</Label>
-              </Link>
-              <FcAutomotive className="size-3.5" />
-            </div>
-          </Dropdown.Item>
-
+          {DropdownLinks.map(({ href, label, icon: Icon }) => (
+            <Dropdown.Item key={href} id={label} href={href} textValue={label}>
+              <div className="flex w-full items-center justify-between gap-2">
+                <Label>{label}</Label>
+                <Icon className="size-3.5" />
+              </div>
+            </Dropdown.Item>
+          ))}
           <Dropdown.Item id="logout" variant="danger">
             <LogOutBtn />
           </Dropdown.Item>
@@ -184,7 +155,7 @@ export default function NavbarComponent() {
             {isPending ? (
               <span className="text-sm text-foreground/60">Loading...</span>
             ) : user ? (
-              DropdownLinks
+              DropdownMenu
             ) : (
               <>
                 <Link href="/login" className={linkClass("/login")}>
@@ -222,7 +193,7 @@ export default function NavbarComponent() {
                   <span className="text-sm text-foreground/60">Loading...</span>
                 ) : user ? (
                   <div className="flex items-center justify-between px-1">
-                    {DropdownLinks}
+                    {DropdownMenu}
                   </div>
                 ) : (
                   <div className="flex flex-col gap-2 px-1">
