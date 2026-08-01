@@ -5,52 +5,6 @@ import { Card, Chip } from "@heroui/react";
 import { headers } from "next/headers";
 import Image from "next/image";
 
-// const highlights = [
-//   { id: "Luxury Cars", label: "Luxury Cars" },
-//   { id: "Exotic Cars", label: "Exotic Cars" },
-//   { id: "Sports Cars", label: "Sports Cars" },
-//   { id: "Classic Cars", label: "Classic Cars" },
-//   { id: "SUVs", label: "SUVs" },
-//   { id: "Convertibles", label: "Convertibles" },
-// ];
-
-// const badge = [
-//   { id: "verified-host", label: "Verified Host" },
-//   { id: "car-enthusiast", label: "Car Enthusiast" },
-//   { id: "traveler", label: "Traveler" },
-//   { id: "road-trip-lover", label: "Road Trip Lover" },
-//   { id: "luxury-cars", label: "Luxury Cars" },
-//   { id: "top-rated", label: "Top Rated" },
-//   { id: "friendly", label: "Friendly" },
-//   { id: "quick-responder", label: "Quick Responder" },
-//   { id: "safe-driver", label: "Safe Driver" },
-//   { id: "premium-service", label: "Premium Service" },
-//   { id: "reliable", label: "Reliable" },
-//   { id: "adventure-seeker", label: "Adventure Seeker" },
-// ];
-// const tags = [
-//   { id: "responsive", label: "Responsive" },
-//   { id: "detail-oriented", label: "Detail-oriented" },
-//   { id: "friendly", label: "Friendly" },
-//   { id: "flexible", label: "Flexible" },
-//   { id: "professional", label: "Professional" },
-//   { id: "reliable", label: "Reliable" },
-//   { id: "punctual", label: "Punctual" },
-//   { id: "trustworthy", label: "Trustworthy" },
-//   { id: "helpful", label: "Helpful" },
-//   { id: "respectful", label: "Respectful" },
-//   { id: "communicative", label: "Communicative" },
-//   { id: "organized", label: "Organized" },
-//   { id: "customer-focused", label: "Customer-focused" },
-//   { id: "problem-solver", label: "Problem Solver" },
-//   { id: "safety-first", label: "Safety First" },
-//   { id: "easy-to-work-with", label: "Easy to Work With" },
-//   { id: "well-maintained", label: "Well Maintained" },
-//   { id: "quick-responder", label: "Quick Responder" },
-//   { id: "experienced-host", label: "Experienced Host" },
-//   { id: "verified-host", label: "Verified Host" },
-// ];
-
 export default async function ProfilePage() {
   // const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
@@ -73,6 +27,7 @@ export default async function ProfilePage() {
     badge,
     highlights,
     tags,
+    image,
   } = userDetails || {};
 
   return (
@@ -96,7 +51,7 @@ export default async function ProfilePage() {
             <Card.Content className="flex flex-col items-center gap-5 p-8 text-center">
               <div className="relative h-32 w-32 overflow-hidden rounded-full ring-4 ring-primary/10">
                 <Image
-                  src="/assets/images/slider-image1.jpg"
+                  src={image || `/assets/images/slider-image1.jpg`}
                   alt="Profile avatar"
                   fill
                   className="object-cover"
@@ -139,8 +94,14 @@ export default async function ProfilePage() {
                     Personal information
                   </h3>
                   <p className="text-sm text-muted">
-                    Your core profile details at a glance.
+                    {`Details about ${name || "the user"}.`}
                   </p>
+                  <div className="mt-2 space-y-1 text-sm text-foreground/70">
+                    <p>{`Email: ${email || "Not provided"}`}</p>
+                    <p>{`Phone: ${phone || "Not provided"}`}</p>
+                    <p>{`Location: ${location || "Not provided"}`}</p>
+                    <p>{`Language: ${language?.map((lang) => lang.label).join(", ") || "Not provided"}`}</p>
+                  </div>
                 </div>
               </Card.Header>
 

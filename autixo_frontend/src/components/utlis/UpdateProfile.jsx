@@ -1,6 +1,5 @@
 "use client";
 
-import { updateUserDetails } from "@/app/lib/datafetch";
 import {
   Button,
   Description,
@@ -13,11 +12,11 @@ import {
   Select,
   TextArea,
   TextField,
-  toast,
 } from "@heroui/react";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { HiEye, HiEyeSlash } from "react-icons/hi2";
 
 const badgeList = [
   { id: "verified-host", label: "Verified Host" },
@@ -97,7 +96,7 @@ export default function UpdateProfile({ data }) {
     _id: userId,
   } = data;
 
-  // console.log("Data received in UpdateProfile:", data);
+  console.log("Data received in UpdateProfile:", data);
 
   const normalizeSelectionValue = (value) => {
     if (Array.isArray(value)) return value;
@@ -113,6 +112,7 @@ export default function UpdateProfile({ data }) {
       if (item?.label) return item.label;
       return "";
     });
+  const [showPassword, setShowPassword] = useState(false);
 
   const [selectedBadges, setSelectedBadges] = useState(() =>
     toSelectionKeys(badge),
@@ -146,21 +146,26 @@ export default function UpdateProfile({ data }) {
       tags: buildSelectionPayload(selectedTags, tagslist),
     };
 
-    // console.log("Payload:", payload);
-
-    try {
-      const result = await updateUserDetails(userId, payload);
-
-      if (result.success) {
-        toast.success("Profile updated successfully!");
-        setOpen(false);
-        router.refresh();
-      }
-      console.log("Success");
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to update profile.");
+    // if Password empty
+    if (!payload.password?.trim()) {
+      delete payload.password;
     }
+
+    console.log("Payload:", payload);
+
+    // try {
+    //   const result = await updateUserDetails(userId, payload);
+
+    //   if (result.success) {
+    //     toast.success("Profile updated successfully!");
+    //     setOpen(false);
+    //     router.refresh();
+    //   }
+    //   console.log("Success");
+    // } catch (error) {
+    //   console.error(error);
+    //   toast.error("Failed to update profile.");
+    // }
   };
 
   return (
@@ -187,7 +192,7 @@ export default function UpdateProfile({ data }) {
               </Modal.Header>
 
               <Modal.Body className="space-y-5">
-                <div className="grid gap-4 md:grid-cols-3">
+                <div className="grid gap-4 md:grid-cols-4">
                   <TextField isRequired name="name" defaultValue={name}>
                     <Label>Name</Label>
                     <Input form="updateProfileForm" />
@@ -198,6 +203,36 @@ export default function UpdateProfile({ data }) {
                     <Input type="email" form="updateProfileForm" />
                     <FieldError />
                   </TextField>
+                  <TextField name="password" label="Update Password">
+                    <Label>Password</Label>
+                    <div className="relative">
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        form="updateProfileForm"
+                        className=" w-full pr-10"
+                      />
+                      <button
+                        type="button"
+                        className="absolute inset-y-0 right-3 flex items-center text-muted"
+                        onClick={() => setShowPassword((v) => !v)}
+                        aria-label={
+                          showPassword ? "Hide password" : "Show password"
+                        }
+                      >
+                        {showPassword ? (
+                          <HiEyeSlash className="size-5" />
+                        ) : (
+                          <HiEye className="size-5" />
+                        )}
+                      </button>
+                    </div>
+                    <FieldError />
+                    <Description>
+                      Leave this blank if you don't want to change your
+                      password.
+                    </Description>
+                  </TextField>
+
                   <TextField name="phone" defaultValue={phone}>
                     <Label>Phone</Label>
                     <Input form="updateProfileForm" />
