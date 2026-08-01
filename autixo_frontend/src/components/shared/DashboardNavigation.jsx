@@ -30,15 +30,24 @@ export default function DashboardNavigation() {
   const pathname = usePathname();
 
   return (
-    <aside className="bg-accent  text-white h-120 md:min-h-[500px] mb-20 rounded-2xl ">
-      <nav className="p-2.5 flex flex-col gap-4 text-white">
+    <aside className="relative mb-20 h-120 overflow-hidden rounded-2xl border border-default-200 bg-linear-to-br from-accent/95 via-accent to-primary/80 text-white shadow-lg md:min-h-125">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-12 -top-10 size-36 rounded-full bg-white/15 blur-2xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-14 -left-10 size-32 rounded-full bg-black/20 blur-2xl"
+      />
+
+      <nav className="relative z-10 flex flex-col gap-4 p-2.5 text-white">
         {navItems.map(({ href, label, icon: Icon }) => (
           <Link
             key={href}
             href={href}
             className={`flex items-center gap-2 rounded-2xl px-3 py-2 transition ${
               pathname === href
-                ? "bg-white text-black font-semibold"
+                ? "bg-white text-black font-semibold shadow-sm"
                 : "text-white hover:bg-white/10"
             }`}
           >

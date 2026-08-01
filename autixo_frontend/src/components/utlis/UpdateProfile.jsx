@@ -1,5 +1,6 @@
 "use client";
 
+import { updateUserDetails } from "@/app/lib/datafetch";
 import {
   Button,
   Description,
@@ -12,6 +13,7 @@ import {
   Select,
   TextArea,
   TextField,
+  toast,
 } from "@heroui/react";
 
 import { useRouter } from "next/navigation";
@@ -153,19 +155,19 @@ export default function UpdateProfile({ data }) {
 
     console.log("Payload:", payload);
 
-    // try {
-    //   const result = await updateUserDetails(userId, payload);
+    try {
+      const result = await updateUserDetails(userId, payload);
 
-    //   if (result.success) {
-    //     toast.success("Profile updated successfully!");
-    //     setOpen(false);
-    //     router.refresh();
-    //   }
-    //   console.log("Success");
-    // } catch (error) {
-    //   console.error(error);
-    //   toast.error("Failed to update profile.");
-    // }
+      if (result.success) {
+        toast.success("Profile updated successfully!");
+        setOpen(false);
+        router.refresh();
+      }
+      console.log("Success");
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to update profile.");
+    }
   };
 
   return (

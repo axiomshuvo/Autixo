@@ -35,22 +35,40 @@ async function run() {
     const database = client.db("autixo");
     const carsCollections = database.collection("cars");
     const usersCollections = database.collection("user");
+    const bookingsCollections = database.collection("bookings");
 
     // GET All Cars Info with pagination [per page limit 12]
     app.get("/cars", async (req, res) => {
       try {
         const page = Number(req.query.page) || 1;
         const limit = Number(req.query.limit) || 12;
+        const search = req.query.search?.toString() || "";
+        const carType = req.query.carType?.toString() || "";
+
+        const filter = {};
+
+        if (search) {
+          filter.carName = {
+            $regex: search,
+            $options: "i",
+          };
+        }
+
+        if (carType) {
+          filter.carType = {
+            $in: [carType],
+          };
+        }
 
         const skip = (page - 1) * limit;
 
         const cars = await carsCollections
-          .find()
+          .find(filter)
           .skip(skip)
           .limit(limit)
           .toArray();
 
-        const totalCars = await carsCollections.countDocuments();
+        const totalCars = await carsCollections.countDocuments(filter);
 
         res.send({
           cars,
@@ -217,6 +235,127 @@ async function run() {
         res.send({ success: true, message: "User updated successfully" });
       } catch (error) {
         res.status(500).send({ error: error.message });
+      }
+    });
+
+    // Add Bookings to the database
+
+    app.post("/bookings", async (req, res) => {
+      try {
+        const newBooking = req.body;
+        console.log("New Booking Request:", newBooking);
+
+        // 1. Find Car
+        const car = await carsCollections.findOne({
+          _id: new ObjectId(newBooking.carId),
+        });
+
+        if (!car) {
+          return res.status(404).send({
+            success: false,
+            message: "Car not found",
+          });
+        }
+
+        // 2. Check Availability
+        if (car.availabilityStatus !== "Available") {
+          return res.status(400).send({
+            success: false,
+            message: "Car is not available for booking",
+          });
+        }
+
+        // 3. Create Booking
+        const bookingResult = await bookingsCollections.insertOne(newBooking);
+
+        // 4. Update Car
+        await carsCollections.updateOne(
+          { _id: new ObjectId(newBooking.carId) },
+          {
+            $set: {
+              availabilityStatus: "Booked",
+            },
+            $inc: {
+              bookingCount: 1,
+            },
+          },
+        );
+
+        console.log(
+          `New booking added with id: ${bookingResult.insertedId}, User: ${newBooking.userId}`,
+        );
+
+        res.status(201).send({
+          success: true,
+          message: "Booking created successfully",
+          bookingId: bookingResult.insertedId,
+        });
+      } catch (error) {
+        console.error("Booking Error:", error);
+
+        res.status(500).send({
+          success: false,
+          message: error.message,
+        });
+      }
+    });
+
+    // Get Bookings by User ID
+    app.get("/bookings/user/:userId", async (req, res) => {
+      try {
+        const { userId } = req.params;
+
+        if (!userId) {
+          return res.status(400).send({
+            success: false,
+            message: "User ID is required",
+          });
+        }
+
+        const bookings = await bookingsCollections
+          .aggregate([
+            {
+              $match: {
+                userId,
+              },
+            },
+            {
+              $lookup: {
+                from: "cars",
+                let: {
+                  carObjectId: {
+                    $toObjectId: "$carId",
+                  },
+                },
+                pipeline: [
+                  {
+                    $match: {
+                      $expr: {
+                        $eq: ["$_id", "$$carObjectId"],
+                      },
+                    },
+                  },
+                ],
+                as: "car",
+              },
+            },
+            {
+              $unwind: {
+                path: "$car",
+                preserveNullAndEmptyArrays: true,
+              },
+            },
+          ])
+          .toArray();
+
+        res.status(200).send(bookings);
+      } catch (error) {
+        console.error("Error fetching bookings:", error);
+
+        res.status(500).send({
+          success: false,
+          message: "Internal Server Error",
+        });
       }
     });
 

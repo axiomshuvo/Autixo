@@ -1,4 +1,5 @@
 import { getCarDetails } from "@/app/lib/datafetch";
+import BookNowBtn from "@/components/utlis/BookNowBtn";
 import { Button, Card, CardContent, CardHeader, Chip } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,6 +35,23 @@ function getFeatures(car) {
 export default async function CarDetailsPage({ params }) {
   const { id } = await params;
   const car = await getCarDetails(id);
+  console.log("Car Details:", car);
+  const {
+    _id,
+    carName,
+    dailyRentPrice,
+    carType,
+    imageUrl,
+    availabilityStatus,
+    seatCapacity,
+    pickupLocation,
+    description,
+    transmission,
+    fuelType,
+    reviews,
+    bookingCount,
+    features,
+  } = car;
 
   if (!car) {
     return (
@@ -57,25 +75,6 @@ export default async function CarDetailsPage({ params }) {
     );
   }
 
-  const images = getImageList(car);
-  const mainImage = images[0];
-  const features = getFeatures(car);
-
-  const carName = car?.carName || "Toyota Fortuner";
-  const rating = car?.rating ?? 4.8;
-  const reviews = car?.reviewsCount ?? 20;
-  const price = car?.dailyRentPrice ?? 120;
-  const carType = car?.carType || "SUV";
-  const seats = car?.seatCapacity ? `${car.seatCapacity} Seats` : "7 Seats";
-  const transmission = car?.transmission || "Automatic";
-  const fuelType = car?.fuelType || "Diesel";
-  const location = car?.location || "Dhaka, Bangladesh";
-  const availability = car?.availability || "Available";
-  const bookingCount = car?.bookingCount ?? 23;
-  const description =
-    car?.description ||
-    "The Toyota Fortuner is a mid-size SUV known for its rugged performance, comfortable interior, and reliability. Perfect for both city drives and off-road adventures.";
-
   return (
     <div className="mx-auto w-[92%] max-w-7xl py-8">
       <div className="mb-6 flex flex-wrap items-center gap-2 text-sm text-foreground-500">
@@ -95,7 +94,7 @@ export default async function CarDetailsPage({ params }) {
           <Card className="min-h-75 overflow-hidden border border-default-200 lg:min-h-130">
             <CardContent className="relative h-full p-0">
               <Image
-                src={mainImage}
+                src={imageUrl}
                 alt={carName}
                 width={1200}
                 height={700}
@@ -112,7 +111,7 @@ export default async function CarDetailsPage({ params }) {
             </CardContent>
           </Card>
 
-          {images.length > 1 ? (
+          {/* {images.length > 1 ? (
             <div className="mt-4 grid grid-cols-5 gap-3">
               {images.map((img, idx) => (
                 <Card
@@ -131,18 +130,20 @@ export default async function CarDetailsPage({ params }) {
                 </Card>
               ))}
             </div>
-          ) : null}
+          ) : null} */}
         </div>
 
         <Card className="flex min-h-80 flex-col border border-default-200 shadow-sm lg:min-h-130">
           <CardHeader className="flex-col items-start gap-1 p-6 pb-4">
             <h1 className="text-3xl font-semibold leading-tight">{carName}</h1>
             <p className="text-sm text-foreground-500">
-              <span className="font-semibold text-warning-500">★ {rating}</span>{" "}
-              ({reviews} Reviews)
+              <span className="font-semibold text-warning-500">
+                ★ {reviews?.rating || 0}
+              </span>{" "}
+              ({reviews?.count || 0} Reviews)
             </p>
             <p className="mt-2 text-4xl font-bold text-primary">
-              ${price}
+              ${dailyRentPrice}
               <span className="ml-1 text-base font-medium text-foreground-500">
                 /day
               </span>
@@ -159,7 +160,7 @@ export default async function CarDetailsPage({ params }) {
 
               <LuUsers className="text-foreground-500" />
               <span className="text-foreground-500">Seats</span>
-              <span className="font-medium">{seats}</span>
+              <span className="font-medium">{seatCapacity}</span>
 
               <LuSettings2 className="text-foreground-500" />
               <span className="text-foreground-500">Transmission</span>
@@ -171,23 +172,19 @@ export default async function CarDetailsPage({ params }) {
 
               <LuMapPin className="text-foreground-500" />
               <span className="text-foreground-500">Location</span>
-              <span className="font-medium">{location}</span>
+              <span className="font-medium">{pickupLocation}</span>
 
               <LuBadgeCheck className="text-foreground-500" />
               <span className="text-foreground-500">Availability</span>
               <Chip size="sm" color="success" variant="flat">
-                {availability}
+                {availabilityStatus}
               </Chip>
 
               <LuBadgeCheck className="text-foreground-500" />
               <span className="text-foreground-500">Booking Count</span>
               <span className="font-medium">{bookingCount}</span>
             </div>
-
-            <Button color="primary" size="lg" className="w-full font-semibold">
-              Book Now
-            </Button>
-
+            <BookNowBtn availability={availabilityStatus} carId={_id} />
             {/* <Button variant="bordered" size="lg" className="w-full">
               <LuHeart className="mr-2 size-4" />
               Save for Later
@@ -205,7 +202,7 @@ export default async function CarDetailsPage({ params }) {
         <div>
           <h2 className="mb-3 text-2xl font-semibold">Features</h2>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {features.map((feature, idx) => (
+            {features?.map((feature, idx) => (
               <div
                 key={`${feature}-${idx}`}
                 className="flex items-center gap-2 text-foreground-700"

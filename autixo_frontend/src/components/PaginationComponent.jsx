@@ -11,8 +11,10 @@ export default function PaginationComponent({ currentPage, totalPages }) {
 
   const goToPage = (p) => {
     setPage(p);
+
     const params = new URLSearchParams(searchParams.toString());
     params.set("page", p);
+
     router.push(`/explore-cars?${params.toString()}`);
   };
 

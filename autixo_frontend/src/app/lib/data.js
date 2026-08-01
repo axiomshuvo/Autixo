@@ -1,3 +1,10 @@
+import {
+  TbCar,
+  TbHeartHandshake,
+  TbShieldCheck,
+  TbUsers,
+} from "react-icons/tb";
+
 // add all slider images here
 export const sliderImages = [
   {
@@ -30,7 +37,7 @@ export const sliderImages = [
   },
 ];
 
-// Cars Stats
+// About Page Data
 
 export const carStats = [
   {
@@ -57,5 +64,32 @@ export const carStats = [
     id: 5,
     title: "Satisfied Customers",
     value: "800+",
+  },
+];
+
+export const ourValues = [
+  {
+    icon: TbShieldCheck,
+    title: "Trust & Transparency",
+    description:
+      "No hidden fees, no surprises — just honest pricing and clear terms on every rental.",
+  },
+  {
+    icon: TbCar,
+    title: "Quality Fleet",
+    description:
+      "Every vehicle is inspected and maintained to the highest standards before it reaches you.",
+  },
+  {
+    icon: TbHeartHandshake,
+    title: "Customer First",
+    description:
+      "Our 24/7 support team is always ready to help, whether you're booking or on the road.",
+  },
+  {
+    icon: TbUsers,
+    title: "Community Driven",
+    description:
+      "Built by renters, for renters — your feedback shapes every feature we ship.",
   },
 ];

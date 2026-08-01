@@ -1,10 +1,23 @@
 const getBaseUrl = () => {
-  return process.env.DATA_URI || "http://localhost:5001";
+  return process.env.DATA_URI;
 };
 // getAllCars
-export const getAllCars = async (page = 1, limit = 12) => {
+export const getAllCars = async (
+  page = 1,
+  limit = 12,
+  search = "",
+  carType = "",
+) => {
   const baseUrl = getBaseUrl();
-  const res = await fetch(`${baseUrl}/cars?page=${page}&limit=${limit}`, {
+  const queryParams = new URLSearchParams({ page, limit });
+  if (search) {
+    queryParams.append("search", search);
+  }
+  if (carType) {
+    queryParams.append("carType", carType);
+  }
+
+  const res = await fetch(`${baseUrl}/cars?${queryParams.toString()}`, {
     cache: "no-store",
   });
 
@@ -110,6 +123,7 @@ export const updateCar = async (id, payload) => {
     },
     body: JSON.stringify(payload),
   });
+  console.log(res);
 
   const data = await res.json();
 
@@ -153,3 +167,45 @@ export const updateUserDetails = async (id, payload) => {
 
   return data;
 };
+
+// Make Booking List by User ID
+export const addBooking = async (payload) => {
+  console.log("Booking Payload:", payload);
+  try {
+    const response = await fetch(`${getBaseUrl()}/bookings`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add booking");
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error adding booking:", error);
+    throw error;
+  }
+};
+
+// Get Booking List by User ID
+export const getBookingListByUserId = async (userId) => {
+  try {
+    const response = await fetch(`${getBaseUrl()}/bookings/user/${userId}`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch bookings");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching booking list:", error);
+    return [];
+  }
+};
+
+//
