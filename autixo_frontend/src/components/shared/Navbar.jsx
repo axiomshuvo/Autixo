@@ -18,7 +18,7 @@ import LogOutBtn from "@/components/utlis/LogOutBtn";
 import LogoImageController from "@/providers/LogoImageController";
 import ThemeController from "@/providers/ThemeController";
 import { usePathname } from "next/navigation";
-
+// --- Navbar Menu  ---
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/explore-cars", label: "Explore Cars" },

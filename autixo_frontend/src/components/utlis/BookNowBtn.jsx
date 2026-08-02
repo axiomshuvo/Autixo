@@ -43,7 +43,7 @@ export default function BookNowBtn({ availability, carId }) {
     try {
       await addBooking({
         userId,
-        carId,
+        carId: carId || "",
         bookingDate: new Date().toISOString(),
         driverNeeded: needsDriver === "yes",
         specialNote: specialNote.trim(),

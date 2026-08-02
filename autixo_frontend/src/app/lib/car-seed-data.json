@@ -3,7 +3,7 @@
     "carName": "Honda HR-V",
     "dailyRentPrice": 120,
     "carType": "Crossover",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/207718/taigun-facelift-exterior-right-front-three-quarter-6.jpeg?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Rangpur",
@@ -20,17 +20,17 @@
       "Air Conditioning"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/207718/taigun-facelift-exterior-right-front-three-quarter-6.jpeg?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/207718/taigun-facelift-exterior-right-front-three-quarter-6.jpeg?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/207718/taigun-facelift-exterior-right-front-right-front-three-quarter-6.jpeg?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/207718/taigun-facelift-exterior-right-front-left-front-three-quarter-6.jpeg?isig=0&q=80"
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Toyota Corolla Altis",
     "dailyRentPrice": 95,
     "carType": "Sedan",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/212741/2026-brezza-exterior-right-front-three-quarter.jpeg?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Dhaka",
@@ -47,17 +47,17 @@
       "ABS"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/212741/2026-brezza-exterior-right-front-three-quarter.jpeg?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/212741/2026-brezza-exterior-right-front-three-quarter.jpeg?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/212741/2026-brezza-exterior-right-front-right-front-three-quarter.jpeg?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/212741/2026-brezza-exterior-right-front-left-front-three-quarter.jpeg?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Maruti Suzuki Brezza",
     "dailyRentPrice": 78,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223184/new-hilux-exterior-right-front-three-quarter.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Chittagong",
@@ -74,17 +74,17 @@
       "Climate Control"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223184/new-hilux-exterior-right-front-three-quarter.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223184/new-hilux-exterior-right-front-three-quarter.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223184/new-hilux-exterior-right-front-right-front-three-quarter.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223184/new-hilux-exterior-right-front-left-front-three-quarter.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Hyundai Creta",
     "dailyRentPrice": 135,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219990/next-gen-tiago-exterior-right-front-three-quarter-38.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Sylhet",
@@ -101,17 +101,17 @@
       "Ventilated Seats"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219990/next-gen-tiago-exterior-right-front-three-quarter-38.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219990/next-gen-tiago-exterior-right-front-three-quarter-38.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219990/next-gen-tiago-exterior-right-front-right-front-three-quarter-38.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219990/next-gen-tiago-exterior-right-front-left-front-three-quarter-38.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Tata Nexon",
     "dailyRentPrice": 88,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-69.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Khulna",
@@ -128,17 +128,17 @@
       "Power Windows"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-69.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/102663/baleno-exterior-right-front-three-quarter-69.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/102663/baleno-exterior-right-front-right-front-three-quarter-69.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/102663/baleno-exterior-right-front-left-front-three-quarter-69.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Kia Seltos",
     "dailyRentPrice": 142,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219668/2025-sonet-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Rajshahi",
@@ -155,17 +155,17 @@
       "Ambient Lighting"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219668/2025-sonet-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219668/2025-sonet-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219668/2025-sonet-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219668/2025-sonet-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Mahindra XUV700",
     "dailyRentPrice": 158,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220110/2026-xuv700-exterior-right-front-three-quarter-4.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Barisal",
@@ -182,17 +182,17 @@
       "Ventilated Seats"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220110/2026-xuv700-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220110/2026-xuv700-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220110/2026-xuv700-exterior-right-front-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220110/2026-xuv700-exterior-right-front-left-front-three-quarter-4.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Skoda Slavia",
     "dailyRentPrice": 109,
     "carType": "Sedan",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/204963/slavia-exterior-right-front-three-quarter-3.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Comilla",
@@ -209,17 +209,17 @@
       "Cruise Control"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/204963/slavia-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/204963/slavia-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/204963/slavia-exterior-right-front-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/204963/slavia-exterior-right-front-left-front-three-quarter-3.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Volkswagen Virtus",
     "dailyRentPrice": 112,
     "carType": "Sedan",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/208289/virtus-exterior-right-front-three-quarter-5.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Gazipur",
@@ -236,17 +236,17 @@
       "Voice Assistant"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/208289/virtus-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/208289/virtus-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/208289/virtus-exterior-right-front-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/208289/virtus-exterior-right-front-left-front-three-quarter-5.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Toyota Fortuner",
     "dailyRentPrice": 185,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223030/fortuner-exterior-right-front-three-quarter-6.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Bogura",
@@ -263,17 +263,17 @@
       "Alloy Wheels"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223030/fortuner-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223030/fortuner-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223030/fortuner-exterior-right-front-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223030/fortuner-exterior-right-front-left-front-three-quarter-6.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Honda City",
     "dailyRentPrice": 101,
     "carType": "Sedan",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231660/city-exterior-right-front-three-quarter-1.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Narayanganj",
@@ -290,17 +290,17 @@
       "ESP"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231660/city-exterior-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231660/city-exterior-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231660/city-exterior-right-front-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231660/city-exterior-right-front-left-front-three-quarter-1.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Hyundai Venue",
     "dailyRentPrice": 84,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214257/venue-exterior-right-front-three-quarter-7.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Jessore",
@@ -317,17 +317,17 @@
       "Steering Controls"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214257/venue-exterior-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214257/venue-exterior-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214257/venue-exterior-right-front-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214257/venue-exterior-right-front-left-front-three-quarter-7.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Tata Punch",
     "dailyRentPrice": 74,
     "carType": "Crossover",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219090/punch-exterior-right-front-three-quarter-8.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Pabna",
@@ -344,17 +344,17 @@
       "Air Conditioning"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219090/punch-exterior-right-front-three-quarter-8.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219090/punch-exterior-right-front-three-quarter-8.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219090/punch-exterior-right-front-right-front-three-quarter-8.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219090/punch-exterior-right-front-left-front-three-quarter-8.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Kia Sonet",
     "dailyRentPrice": 129,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/222221/sonet-exterior-right-front-three-quarter-3.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Dinajpur",
@@ -371,17 +371,17 @@
       "Auto Headlamps"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/222221/sonet-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/222221/sonet-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/222221/sonet-exterior-right-front-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/222221/sonet-exterior-right-front-left-front-three-quarter-3.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "MG Hector",
     "dailyRentPrice": 151,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/202088/hector-exterior-right-front-three-quarter-1.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 7,
     "pickupLocation": "Cumilla",
@@ -398,17 +398,17 @@
       "Premium Audio"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/202088/hector-exterior-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/202088/hector-exterior-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/202088/hector-exterior-right-front-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/202088/hector-exterior-right-front-left-front-three-quarter-1.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Toyota Rumion",
     "dailyRentPrice": 115,
     "carType": "MPV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219809/rumion-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Faridpur",
@@ -425,17 +425,17 @@
       "Parking Sensors"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219809/rumion-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219809/rumion-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219809/rumion-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219809/rumion-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Maruti Suzuki Ertiga",
     "dailyRentPrice": 92,
     "carType": "MPV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219780/ertiga-exterior-right-front-three-quarter-7.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Mymensingh",
@@ -452,17 +452,17 @@
       "Rear Camera"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219780/ertiga-exterior-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219780/ertiga-exterior-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219780/ertiga-exterior-right-front-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219780/ertiga-exterior-right-front-left-front-three-quarter-7.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Nissan Magnite",
     "dailyRentPrice": 69,
     "carType": "Hatchback",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/200530/magnite-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Kushtia",
@@ -479,17 +479,17 @@
       "Infotainment"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/200530/magnite-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/200530/magnite-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/200530/magnite-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/200530/magnite-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Renault Kiger",
     "dailyRentPrice": 81,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225045/kiger-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Satkhira",
@@ -506,17 +506,17 @@
       "Cruise Control"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225045/kiger-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225045/kiger-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225045/kiger-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225045/kiger-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Citroen C3",
     "dailyRentPrice": 71,
     "carType": "Hatchback",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226600/c3-exterior-right-front-three-quarter-3.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Noakhali",
@@ -533,17 +533,17 @@
       "Rear Camera"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226600/c3-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226600/c3-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226600/c3-exterior-right-front-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226600/c3-exterior-right-front-left-front-three-quarter-3.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "BMW 3 Series",
     "dailyRentPrice": 245,
     "carType": "Luxury",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221100/3-series-exterior-right-front-three-quarter-6.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Dhaka",
@@ -560,17 +560,17 @@
       "Gesture Control"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221100/3-series-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221100/3-series-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221100/3-series-exterior-right-front-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221100/3-series-exterior-right-front-left-front-three-quarter-6.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Mercedes-Benz C-Class",
     "dailyRentPrice": 238,
     "carType": "Luxury",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220920/c-class-exterior-right-front-three-quarter-4.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Banani",
@@ -587,17 +587,17 @@
       "Panoramic Roof"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220920/c-class-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220920/c-class-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220920/c-class-exterior-right-front-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220920/c-class-exterior-right-front-left-front-three-quarter-4.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Volvo XC60",
     "dailyRentPrice": 252,
     "carType": "Luxury",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220500/xc60-exterior-right-front-three-quarter-4.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Gulshan",
@@ -614,17 +614,17 @@
       "Climate Control"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220500/xc60-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220500/xc60-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220500/xc60-exterior-right-front-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220500/xc60-exterior-right-front-left-front-three-quarter-4.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Audi A4",
     "dailyRentPrice": 221,
     "carType": "Luxury",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221500/a4-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Uttara",
@@ -641,17 +641,17 @@
       "Adaptive Suspension"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221500/a4-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221500/a4-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221500/a4-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221500/a4-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Porsche Macan",
     "dailyRentPrice": 289,
     "carType": "Luxury",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221800/macan-exterior-right-front-three-quarter-3.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Mirpur",
@@ -668,17 +668,17 @@
       "Adaptive Air Suspension"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221800/macan-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221800/macan-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221800/macan-exterior-right-front-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221800/macan-exterior-right-front-left-front-three-quarter-3.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Tata Tiago EV",
     "dailyRentPrice": 96,
     "carType": "Hatchback",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231500/tiago-ev-exterior-right-front-three-quarter-5.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Narshingdi",
@@ -695,17 +695,17 @@
       "Auto AC"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231500/tiago-ev-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231500/tiago-ev-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231500/tiago-ev-exterior-right-front-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/231500/tiago-ev-exterior-right-front-left-front-three-quarter-5.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "MG Windsor EV",
     "dailyRentPrice": 118,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232300/windsor-ev-exterior-right-front-three-quarter-6.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Savar",
@@ -722,17 +722,17 @@
       "Rear AC Vents"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232300/windsor-ev-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232300/windsor-ev-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232300/windsor-ev-exterior-right-front-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232300/windsor-ev-exterior-right-front-left-front-three-quarter-6.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Mahindra XUV400 EV",
     "dailyRentPrice": 108,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/230940/xuv400-ev-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Tangail",
@@ -749,17 +749,17 @@
       "Connected Car"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/230940/xuv400-ev-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/230940/xuv400-ev-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/230940/xuv400-ev-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/230940/xuv400-ev-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Hyundai Kona Electric",
     "dailyRentPrice": 164,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232100/kona-electric-exterior-right-front-three-quarter-5.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Bogra",
@@ -776,17 +776,17 @@
       "Connected Navigation"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232100/kona-electric-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232100/kona-electric-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232100/kona-electric-exterior-right-front-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232100/kona-electric-exterior-right-front-left-front-three-quarter-5.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Kia EV6",
     "dailyRentPrice": 196,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232700/ev6-exterior-right-front-three-quarter-4.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Rangpur",
@@ -803,17 +803,17 @@
       "Autonomous Features"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232700/ev6-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232700/ev6-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232700/ev6-exterior-right-front-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/232700/ev6-exterior-right-front-left-front-three-quarter-4.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Toyota Urban Cruiser Hyryder",
     "dailyRentPrice": 126,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233020/hyryder-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Barishal",
@@ -830,17 +830,17 @@
       "Auto AC"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233020/hyryder-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233020/hyryder-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233020/hyryder-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233020/hyryder-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Maruti Suzuki Fronx",
     "dailyRentPrice": 87,
     "carType": "Crossover",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233200/fronx-exterior-right-front-three-quarter-1.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Patuakhali",
@@ -857,17 +857,17 @@
       "Power Windows"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233200/fronx-exterior-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233200/fronx-exterior-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233200/fronx-exterior-right-front-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/233200/fronx-exterior-right-front-left-front-three-quarter-1.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Ford Endeavour",
     "dailyRentPrice": 168,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214440/endeavour-exterior-right-front-three-quarter-3.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Khagrachari",
@@ -884,17 +884,17 @@
       "Adaptive Cruise"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214440/endeavour-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214440/endeavour-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214440/endeavour-exterior-right-front-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/214440/endeavour-exterior-right-front-left-front-three-quarter-3.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Isuzu D-Max V-Cross",
     "dailyRentPrice": 177,
     "carType": "Pickup",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/216400/d-max-v-cross-exterior-right-front-three-quarter-5.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Cox's Bazar",
@@ -911,17 +911,17 @@
       "Rear Camera"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/216400/d-max-v-cross-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/216400/d-max-v-cross-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/216400/d-max-v-cross-exterior-right-front-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/216400/d-max-v-cross-exterior-right-front-left-front-three-quarter-5.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Toyota Innova Crysta",
     "dailyRentPrice": 152,
     "carType": "MPV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/217870/innova-crysta-exterior-right-front-three-quarter-1.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 7,
     "pickupLocation": "Moulvibazar",
@@ -938,17 +938,17 @@
       "Large Boot"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/217870/innova-crysta-exterior-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/217870/innova-crysta-exterior-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/217870/innova-crysta-exterior-right-front-right-front-three-quarter-1.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/217870/innova-crysta-exterior-right-front-left-front-three-quarter-1.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Mahindra Scorpio N",
     "dailyRentPrice": 139,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218170/scorpio-n-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Rangamati",
@@ -965,17 +965,17 @@
       "Rear Camera"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218170/scorpio-n-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218170/scorpio-n-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218170/scorpio-n-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218170/scorpio-n-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Jeep Compass",
     "dailyRentPrice": 173,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219310/compass-exterior-right-front-three-quarter-3.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Brahmanbaria",
@@ -992,17 +992,17 @@
       "Adaptive Cruise"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219310/compass-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219310/compass-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219310/compass-exterior-right-front-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219310/compass-exterior-right-front-left-front-three-quarter-3.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Kia Carens",
     "dailyRentPrice": 124,
     "carType": "MPV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218560/carens-exterior-right-front-three-quarter-6.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 7,
     "pickupLocation": "Cumilla",
@@ -1019,17 +1019,17 @@
       "Rear AC"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218560/carens-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218560/carens-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218560/carens-exterior-right-front-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218560/carens-exterior-right-front-left-front-three-quarter-6.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Hyundai Alcazar",
     "dailyRentPrice": 132,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218430/alcazar-exterior-right-front-three-quarter-8.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Jamalpur",
@@ -1046,17 +1046,17 @@
       "Wireless Charging"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218430/alcazar-exterior-right-front-three-quarter-8.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218430/alcazar-exterior-right-front-three-quarter-8.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218430/alcazar-exterior-right-front-right-front-three-quarter-8.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/218430/alcazar-exterior-right-front-left-front-three-quarter-8.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Tata Safari",
     "dailyRentPrice": 147,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219180/safari-exterior-right-front-three-quarter-4.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Panchagarh",
@@ -1073,17 +1073,17 @@
       "Connected Tech"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219180/safari-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219180/safari-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219180/safari-exterior-right-front-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/219180/safari-exterior-right-front-left-front-three-quarter-4.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Honda Amaze",
     "dailyRentPrice": 89,
     "carType": "Sedan",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220100/amaze-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Natore",
@@ -1100,17 +1100,17 @@
       "ABS"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220100/amaze-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220100/amaze-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220100/amaze-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220100/amaze-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Maruti Suzuki Swift",
     "dailyRentPrice": 66,
     "carType": "Hatchback",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220980/swift-exterior-right-front-three-quarter-6.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Sirajganj",
@@ -1127,17 +1127,17 @@
       "Air Conditioning"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220980/swift-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220980/swift-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220980/swift-exterior-right-front-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/220980/swift-exterior-right-front-left-front-three-quarter-6.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Renault Triber",
     "dailyRentPrice": 76,
     "carType": "MPV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221200/triber-exterior-right-front-three-quarter-7.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 7,
     "pickupLocation": "Magura",
@@ -1154,17 +1154,17 @@
       "Infotainment"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221200/triber-exterior-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221200/triber-exterior-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221200/triber-exterior-right-front-right-front-three-quarter-7.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221200/triber-exterior-right-front-left-front-three-quarter-7.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Tata Harrier",
     "dailyRentPrice": 144,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221340/harrier-exterior-right-front-three-quarter-4.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Naogaon",
@@ -1181,17 +1181,17 @@
       "Connected Car"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221340/harrier-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221340/harrier-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221340/harrier-exterior-right-front-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/221340/harrier-exterior-right-front-left-front-three-quarter-4.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Mahindra XUV3XO",
     "dailyRentPrice": 122,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223700/xuv-3xo-exterior-right-front-three-quarter-5.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Shariatpur",
@@ -1208,17 +1208,17 @@
       "Wireless Charging"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223700/xuv-3xo-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223700/xuv-3xo-exterior-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223700/xuv-3xo-exterior-right-front-right-front-three-quarter-5.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/223700/xuv-3xo-exterior-right-front-left-front-three-quarter-5.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Citroen C3 Aircross",
     "dailyRentPrice": 98,
     "carType": "Crossover",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224500/c3-aircross-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 7,
     "pickupLocation": "Bhola",
@@ -1235,17 +1235,17 @@
       "ABS"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224500/c3-aircross-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224500/c3-aircross-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224500/c3-aircross-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224500/c3-aircross-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Volvo XC90",
     "dailyRentPrice": 310,
     "carType": "Luxury",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224900/xc90-exterior-right-front-three-quarter-3.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 7,
     "pickupLocation": "Banani",
@@ -1262,17 +1262,17 @@
       "Adaptive Air Suspension"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224900/xc90-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224900/xc90-exterior-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224900/xc90-exterior-right-front-right-front-three-quarter-3.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/224900/xc90-exterior-right-front-left-front-three-quarter-3.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Mercedes-Benz GLC",
     "dailyRentPrice": 265,
     "carType": "Luxury",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225800/glc-exterior-right-front-three-quarter-4.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Dhanmondi",
@@ -1289,17 +1289,17 @@
       "Leather Upholstery"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225800/glc-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225800/glc-exterior-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225800/glc-exterior-right-front-right-front-three-quarter-4.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/225800/glc-exterior-right-front-left-front-three-quarter-4.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1519643381401-22c77e60520e?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "BMW X5",
     "dailyRentPrice": 302,
     "carType": "Luxury",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226200/x5-exterior-right-front-three-quarter-6.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Unavailable",
     "seatCapacity": 5,
     "pickupLocation": "Mohakhali",
@@ -1316,17 +1316,17 @@
       "Laser Lights"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226200/x5-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226200/x5-exterior-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226200/x5-exterior-right-front-right-front-three-quarter-6.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226200/x5-exterior-right-front-left-front-three-quarter-6.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526726538690-5cbf956ae2fd?auto=format&fit=crop&w=1400&q=80"
     ]
   },
   {
     "carName": "Tesla Model Y",
     "dailyRentPrice": 214,
     "carType": "SUV",
-    "imageUrl": "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226900/model-y-exterior-right-front-three-quarter-2.png?isig=0&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
     "availabilityStatus": "Available",
     "seatCapacity": 5,
     "pickupLocation": "Gulshan",
@@ -1343,10 +1343,10 @@
       "Glass Roof"
     ],
     "images": [
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226900/model-y-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226900/model-y-exterior-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226900/model-y-exterior-right-front-right-front-three-quarter-2.png?isig=0&q=80",
-      "https://imgd.aeplcdn.com/1920x1080/n/cw/ec/226900/model-y-exterior-right-front-left-front-three-quarter-2.png?isig=0&q=80"
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80"
     ]
   }
 ]

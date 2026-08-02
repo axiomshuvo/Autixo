@@ -1,8 +1,11 @@
-import { carStats, ourValues } from "@/app/lib/data";
+import { aboutPageContent, carStats, ourValues } from "@/app/lib/data";
+import FaqAccordion from "@/components/FaqAccordion";
 import { Card, Separator } from "@heroui/react";
 import CtaButtons from "./CtaButtons";
 
 export default function AboutPage() {
+  const { hero, story, values, cta } = aboutPageContent;
+
   return (
     <main>
       {/* Hero */}
@@ -16,11 +19,9 @@ export default function AboutPage() {
           className="absolute -bottom-28 -left-20 size-80 rounded-full bg-black/20 blur-3xl"
         />
         <div className="container mx-auto relative z-10 px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-5">About Autixo</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-5">{hero.title}</h1>
           <p className="max-w-2xl mx-auto text-lg text-accent-foreground/80">
-            We're on a mission to make car rental simple, transparent, and
-            accessible for everyone — whether it's a quick city trip or a
-            cross-country adventure.
+            {hero.description}
           </p>
         </div>
       </section>
@@ -29,23 +30,12 @@ export default function AboutPage() {
       <section className="container mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-5">Our Story</h2>
-            <p className="text-muted leading-relaxed mb-4">
-              Autixo started with a simple idea: renting a car should be as easy
-              as ordering a coffee. Tired of clunky booking systems, hidden
-              fees, and inconsistent service, we set out to build a platform
-              that puts the renter first.
-            </p>
-            <p className="text-muted leading-relaxed mb-4">
-              Since launching, we've grown to serve thousands of customers
-              across 60+ pickup locations, with a fleet of over 500 verified
-              vehicles — from compact city cars to premium SUVs.
-            </p>
-            <p className="text-muted leading-relaxed">
-              Every car on Autixo is vetted, every price is upfront, and every
-              booking is confirmed instantly. No paperwork, no waiting — just
-              pick your car and go.
-            </p>
+            <h2 className="text-4xl font-bold mb-5">{story.heading}</h2>
+            {story.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="text-muted leading-relaxed mb-4">
+                {paragraph}
+              </p>
+            ))}
           </div>
 
           <Card className="border border-border bg-surface p-8" shadow="none">
@@ -61,12 +51,10 @@ export default function AboutPage() {
             </div>
             <Separator className="my-8" />
             <blockquote className="text-center text-lg italic text-muted">
-              "Autixo turned what used to be a stressful rental process into a
-              five-minute experience. I'll never go back to traditional
-              agencies."
+              “{story.quote}”
             </blockquote>
             <p className="text-center text-sm text-muted mt-3">
-              — Sarah M., loyal customer since 2024
+              — {story.quoteAuthor}
             </p>
           </Card>
         </div>
@@ -76,11 +64,10 @@ export default function AboutPage() {
       <section className="bg-surface-secondary py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-4">
-            What We Stand For
+            {values.heading}
           </h2>
           <p className="text-center text-muted mb-14 max-w-xl mx-auto">
-            These principles guide every decision we make — from the cars we
-            list to the support we provide.
+            {values.description}
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {ourValues.map(({ icon: Icon, title, description }) => (
@@ -106,6 +93,9 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <FaqAccordion />
+
       {/* CTA */}
       <section className="container mx-auto px-6 py-20 text-center">
         <Card
@@ -113,12 +103,9 @@ export default function AboutPage() {
           shadow="none"
         >
           <Card.Content className="p-12 md:p-16 text-accent-foreground gap-5">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Ready to hit the road?
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">{cta.title}</h2>
             <p className="max-w-lg mx-auto text-lg text-accent-foreground/80 mb-8">
-              Browse our fleet and find the perfect car for your next journey.
-              Booking takes less than a minute.
+              {cta.description}
             </p>
             <CtaButtons />
           </Card.Content>

@@ -3,5 +3,5 @@
 import { ToastProvider } from "@heroui/react";
 
 export default function Toast() {
-  return <ToastProvider placement="top" />;
+  return <ToastProvider placement="top end" />;
 }

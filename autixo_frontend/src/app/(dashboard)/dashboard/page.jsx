@@ -1,4 +1,15 @@
-import { Button, Card, Chip, Separator, Table } from "@heroui/react";
+import { auth } from "@/app/lib/auth";
+import { getUserDetails } from "@/app/lib/datafetch";
+import {
+  Button,
+  buttonVariants,
+  Card,
+  Chip,
+  Link,
+  Separator,
+  Table,
+} from "@heroui/react";
+import { headers } from "next/headers";
 import {
   LuArrowRight,
   LuBadgeCheck,
@@ -89,17 +100,29 @@ const statusColorMap = {
   Completed: "primary",
 };
 
-export default function DashBoardPage() {
+export default async function DashBoardPage() {
+  const session = await auth.api.getSession({ headers: await headers() });
+  const ownerId = session?.user?.id;
+  const userDetails = ownerId ? await getUserDetails(ownerId) : null;
+
+  const rawName =
+    userDetails?.name || session?.user?.name || session?.user?.email || "";
+  const displayName = rawName ? rawName.split(" ")[0] : "there";
+  const heroSubtitle =
+    userDetails?.headline ||
+    userDetails?.about ||
+    "Your fleet performance is looking strong today. Keep momentum with quick actions and monitor bookings in a modern command center.";
+
   return (
     <main className="mx-auto w-full max-w-7xl space-y-6 py-2">
-      <section className="relative overflow-hidden rounded-3xl border border-default-200 bg-linear-to-br from-accent/95 via-accent to-primary/80 p-8 text-accent-foreground shadow-lg">
+      <section className="relative overflow-hidden rounded-[24px] border border-default-200 bg-linear-to-br from-accent/90 via-accent to-primary/80 p-8 text-white shadow-sm">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-16 -top-20 size-64 rounded-full bg-white/10 blur-3xl"
+          className="pointer-events-none absolute -right-10 -top-10 size-40 rounded-full bg-white/10 blur-2xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -bottom-24 -left-14 size-60 rounded-full bg-black/20 blur-3xl"
+          className="pointer-events-none absolute -bottom-12 -left-10 size-36 rounded-full bg-black/10 blur-2xl"
         />
 
         <div className="relative z-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
@@ -109,25 +132,27 @@ export default function DashBoardPage() {
               Monthly Snapshot
             </Chip>
             <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-              Welcome back, Pradipta
+              Welcome back, {displayName}
             </h1>
             <p className="text-sm leading-6 text-accent-foreground/80 md:text-base">
-              Your fleet performance is looking strong today. Keep momentum with
-              quick actions and monitor bookings in a modern command center.
+              {heroSubtitle}
             </p>
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Button size="lg" variant="flat" className="font-semibold">
+            <Link
+              href="/add-car"
+              className={`${buttonVariants({ size: "lg" })} bg-background! text-foreground! shadow-sm hover:text-white!  hover:bg-purple-700/85!`}
+            >
               Add New Car
-            </Button>
-            <Button
-              size="lg"
-              variant="solid"
-              className="font-semibold bg-background text-foreground"
+            </Link>
+
+            <Link
+              href="/my-bookings"
+              className={`${buttonVariants({ size: "lg", variant: "outline" })} border border-fuchsia-500/60 bg-fuchsia-500/60 text-white backdrop-blur-sm hover:border-fuchsia-00 hover:bg-fuchsia-700`}
             >
               View Bookings
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -181,12 +206,12 @@ export default function DashBoardPage() {
               <Table.ScrollContainer>
                 <Table.Content>
                   <Table.Header>
-                    <Table.Column>Booking ID</Table.Column>
-                    <Table.Column>Customer</Table.Column>
-                    <Table.Column>Car</Table.Column>
-                    <Table.Column>Date</Table.Column>
-                    <Table.Column>Amount</Table.Column>
-                    <Table.Column>Status</Table.Column>
+                    <Table.Column isRowHeader>Booking ID</Table.Column>
+                    <Table.Column isRowHeader>Customer</Table.Column>
+                    <Table.Column isRowHeader>Car</Table.Column>
+                    <Table.Column isRowHeader>Date</Table.Column>
+                    <Table.Column isRowHeader>Amount</Table.Column>
+                    <Table.Column isRowHeader>Status</Table.Column>
                   </Table.Header>
 
                   <Table.Body>

@@ -1,19 +1,10 @@
-import {
-  HiOutlineCheckCircle,
-  HiOutlineClock,
-  HiOutlineShieldCheck,
-  HiOutlineTag,
-} from "react-icons/hi2";
+import { authLayoutContent } from "@/app/lib/data";
 import { TbCar } from "react-icons/tb";
 
-const features = [
-  { icon: HiOutlineCheckCircle, label: "Wide selection of verified vehicles" },
-  { icon: HiOutlineClock, label: "Instant booking confirmation" },
-  { icon: HiOutlineShieldCheck, label: "24/7 customer support" },
-  { icon: HiOutlineTag, label: "Transparent, no-surprise pricing" },
-];
-
 export default function AuthLayout({ children }) {
+  const { brandName, heading, description, footerNote, features } =
+    authLayoutContent;
+
   return (
     <div className="container mx-auto my-[5%] flex min-h-[calc(100vh-1px)] flex-1 overflow-hidden rounded-2xl border border-border shadow-xl">
       <div className="relative hidden w-2/5 flex-col justify-between overflow-hidden bg-linear-to-br from-accent to-[oklch(24%_0.12_292.1)] p-10 text-accent-foreground lg:flex">
@@ -30,17 +21,16 @@ export default function AuthLayout({ children }) {
           <span className="flex size-9 items-center justify-center rounded-full bg-white/15">
             <TbCar className="size-5" />
           </span>
-          <span className="text-xl font-semibold tracking-tight">Autixo</span>
+          <span className="text-xl font-semibold tracking-tight">
+            {brandName}
+          </span>
         </div>
 
         <div className="relative z-10 flex flex-col gap-7">
           <div className="flex flex-col gap-3">
-            <p className="text-4xl leading-tight font-semibold">
-              Rent the perfect car for any journey
-            </p>
+            <p className="text-4xl leading-tight font-semibold">{heading}</p>
             <p className="max-w-sm text-sm text-accent-foreground/75">
-              Browse, compare, and book with confidence — Autixo makes car
-              rental simple.
+              {description}
             </p>
           </div>
 
@@ -57,8 +47,7 @@ export default function AuthLayout({ children }) {
         </div>
 
         <p className="relative z-10 text-xs text-accent-foreground/60">
-          {/* © {new Date().getFullYear()} Autixo. All rights reserved. */}
-          Drive more, worry less.
+          {footerNote}
         </p>
       </div>
 

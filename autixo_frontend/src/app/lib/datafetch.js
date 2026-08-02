@@ -1,5 +1,5 @@
 const getBaseUrl = () => {
-  return process.env.DATA_URI;
+  return process.env.DATA_URI || "http://localhost:5001";
 };
 // getAllCars
 export const getAllCars = async (
@@ -180,16 +180,19 @@ export const addBooking = async (payload) => {
       body: JSON.stringify(payload),
     });
 
-    if (!response.ok) {
-      throw new Error("Failed to add booking");
+    const data = await response.json();
+
+    if (!response.ok || !data.success) {
+      // Use the backend's message if available
+      throw new Error(data.message || "Failed to add booking");
     }
-    return await response.json();
+
+    return data;
   } catch (error) {
     console.error("Error adding booking:", error);
     throw error;
   }
 };
-
 // Get Booking List by User ID
 export const getBookingListByUserId = async (userId) => {
   try {
@@ -208,4 +211,20 @@ export const getBookingListByUserId = async (userId) => {
   }
 };
 
-//
+// Delete Booking by ID
+export const deleteBooking = async (bookingId) => {
+  try {
+    const response = await fetch(`${getBaseUrl()}/bookings/${bookingId}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to delete booking");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error deleting booking:", error);
+    throw error;
+  }
+};

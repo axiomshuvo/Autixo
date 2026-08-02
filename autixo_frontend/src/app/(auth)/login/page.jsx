@@ -13,17 +13,40 @@ import {
   toast,
 } from "@heroui/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { HiEye, HiEyeSlash } from "react-icons/hi2";
 
+const getSafeRedirectPath = (redirectValue) => {
+  if (typeof redirectValue !== "string") return "/dashboard";
+
+  const trimmed = redirectValue.trim();
+
+  if (!trimmed) return "/dashboard";
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+    return "/dashboard";
+  }
+  if (trimmed.startsWith("//")) return "/dashboard";
+  if (!trimmed.startsWith("/")) return `/${trimmed}`;
+
+  return trimmed;
+};
+
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(null); // null | "credentials" | "google"
 
+  const redirectTo = getSafeRedirectPath(searchParams.get("redirect"));
   const isBusy = loading !== null;
+
+  useEffect(() => {
+    if (redirectTo && redirectTo !== "/login") {
+      toast.warning("Please log in to continue.");
+    }
+  }, [redirectTo]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -46,7 +69,7 @@ export default function LoginPage() {
 
       toast.success("Welcome back!");
       router.refresh();
-      router.push("/dashboard");
+      router.push(redirectTo);
     } catch (err) {
       toast.danger("Something went wrong. Please try again.");
     } finally {
@@ -60,7 +83,7 @@ export default function LoginPage() {
     try {
       const { error } = await authClient.signIn.social({
         provider: "google",
-        callbackURL: "/dashboard",
+        callbackURL: redirectTo,
       });
 
       if (error) {

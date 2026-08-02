@@ -1,6 +1,6 @@
 import Footer from "@/components/shared/Footer";
 import NavbarComponent from "@/components/shared/Navbar";
-import Toast from "@/components/Toast";
+import Toast from "@/components/shared/Toast";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 

@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function proxy(request) {
   const sessionCookie = getSessionCookie(request);
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
 
   const protectedRoutes = [
     "/dashboard",
@@ -20,7 +20,11 @@ export async function proxy(request) {
   const isAuthRoute = authRoutes.includes(pathname);
 
   if (!sessionCookie && isProtectedRoute) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    const redirectPath = `${pathname}${search}`;
+    const loginUrl = new URL("/login", request.url);
+    loginUrl.searchParams.set("redirect", redirectPath);
+
+    return NextResponse.redirect(loginUrl);
   }
 
   if (sessionCookie && isAuthRoute) {

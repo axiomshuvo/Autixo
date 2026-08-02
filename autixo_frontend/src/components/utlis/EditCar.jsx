@@ -28,38 +28,86 @@ const carTypeOptions = [
   { id: "hybrid", label: "Hybrid" },
 ];
 
+const transmissionOptions = [
+  { id: "Automatic", label: "Automatic" },
+  { id: "Manual", label: "Manual" },
+  { id: "CVT", label: "CVT" },
+];
+
+const fuelTypeOptions = [
+  { id: "Petrol", label: "Petrol" },
+  { id: "Diesel", label: "Diesel" },
+  { id: "Hybrid", label: "Hybrid" },
+  { id: "Electric", label: "Electric" },
+];
+
+const availabilityOptions = [
+  { id: "Available", label: "Available" },
+  { id: "Unavailable", label: "Unavailable" },
+];
+
 export default function EditCar({ carId, carData }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [formValues, setFormValues] = useState({
+    carName: carData?.carName || "",
+    dailyRentPrice: carData?.dailyRentPrice || "",
+    carType: carData?.carType || "",
+    seatCapacity: carData?.seatCapacity || "",
+    pickupLocation: carData?.pickupLocation || "",
+    availabilityStatus: carData?.availabilityStatus || "Available",
+    transmission: carData?.transmission || "Automatic",
+    fuelType: carData?.fuelType || "Petrol",
+    reviews: carData?.reviews || "0",
+    bookingCount: carData?.bookingCount || "0",
+    imageUrl: carData?.imageUrl || "",
+    images: Array.isArray(carData?.images) ? carData.images.join(", ") : "",
+    features: Array.isArray(carData?.features)
+      ? carData.features.join(", ")
+      : "",
+    description: carData?.description || "",
+  });
 
-  const {
-    carName,
-    dailyRentPrice,
-    carType,
-    seatCapacity,
-    pickupLocation,
-    availabilityStatus,
-    imageUrl,
-    description,
-  } = carData;
-  console.log("EditCar Component - carData:", carData);
+  const handleFieldChange = (field) => (event) => {
+    setFormValues((prev) => ({ ...prev, [field]: event.target.value }));
+  };
+
+  const getSelectedKeys = (value) => (value ? new Set([value]) : new Set());
+
+  const handleSelectChange = (field) => (keys) => {
+    const selectedValue =
+      typeof keys === "string" ? keys : (Array.from(keys ?? [])[0] ?? "");
+    setFormValues((prev) => ({ ...prev, [field]: selectedValue }));
+  };
+
+  const normalizeList = (value) =>
+    value
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
 
   const handleCarUpdate = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-
     const payload = {
-      ...Object.fromEntries(formData.entries()),
-      dailyRentPrice: Number(formData.get("dailyRentPrice")),
-      seatCapacity: Number(formData.get("seatCapacity")),
+      ...formValues,
+      dailyRentPrice: Number(formValues.dailyRentPrice || 0),
+      seatCapacity: Number(formValues.seatCapacity || 0),
+      reviews: Number(formValues.reviews || 0),
+      bookingCount: Number(formValues.bookingCount || 0),
+      features: normalizeList(formValues.features),
+      images:
+        normalizeList(formValues.images).length > 0
+          ? normalizeList(formValues.images)
+          : formValues.imageUrl
+            ? [formValues.imageUrl]
+            : [],
     };
 
     try {
       await updateCar(carId, payload);
       toast.success("Car updated successfully.");
       setOpen(false);
-
       router.refresh();
     } catch (error) {
       toast.error(error.message);
@@ -74,14 +122,14 @@ export default function EditCar({ carId, carData }) {
 
       <Modal.Backdrop>
         <Modal.Container placement="center">
-          <Modal.Dialog className="max-w-4xl">
+          <Modal.Dialog className="max-w-5xl">
             <Modal.CloseTrigger />
 
             <Modal.Header>
               <Modal.Heading>Edit Car</Modal.Heading>
-
               <p className="text-sm text-default-500">
-                Update your vehicle information.
+                Update your vehicle information with the same structured fields
+                as the add-car experience.
               </p>
             </Modal.Header>
 
@@ -89,108 +137,195 @@ export default function EditCar({ carId, carData }) {
               <Form
                 onSubmit={handleCarUpdate}
                 validationBehavior="native"
-                className="grid gap-5 md:grid-cols-2"
+                className="space-y-6"
               >
-                <TextField isRequired name="carName" defaultValue={carName}>
-                  <Label>Car Name</Label>
-                  <Input />
-                  <FieldError />
-                </TextField>
+                <div className="grid gap-5 md:grid-cols-2">
+                  <TextField isRequired name="carName">
+                    <Label>Car Name</Label>
+                    <Input
+                      value={formValues.carName}
+                      onChange={handleFieldChange("carName")}
+                    />
+                    <FieldError />
+                  </TextField>
 
-                <TextField
-                  isRequired
-                  name="dailyRentPrice"
-                  defaultValue={dailyRentPrice}
-                >
-                  <Label>Daily Rent Price</Label>
-                  <Input type="number" />
-                  <FieldError />
-                </TextField>
+                  <TextField isRequired name="dailyRentPrice">
+                    <Label>Daily Rent Price</Label>
+                    <Input
+                      type="number"
+                      value={formValues.dailyRentPrice}
+                      onChange={handleFieldChange("dailyRentPrice")}
+                    />
+                    <FieldError />
+                  </TextField>
 
-                <Select name="carType" defaultValue={[carType]}>
-                  <Label>Car Type</Label>
+                  <Select
+                    name="carType"
+                    selectedKeys={getSelectedKeys(formValues.carType)}
+                    onSelectionChange={handleSelectChange("carType")}
+                  >
+                    <Label>Car Type</Label>
+                    <Select.Trigger>
+                      <Select.Value />
+                      <Select.Indicator />
+                    </Select.Trigger>
+                    <Select.Popover>
+                      <ListBox>
+                        {carTypeOptions.map((item) => (
+                          <ListBox.Item key={item.id} id={item.id}>
+                            {item.label}
+                          </ListBox.Item>
+                        ))}
+                      </ListBox>
+                    </Select.Popover>
+                  </Select>
 
-                  <Select.Trigger>
-                    <Select.Value />
-                    <Select.Indicator />
-                  </Select.Trigger>
+                  <TextField isRequired name="seatCapacity">
+                    <Label>Seat Capacity</Label>
+                    <Input
+                      type="number"
+                      value={formValues.seatCapacity}
+                      onChange={handleFieldChange("seatCapacity")}
+                    />
+                    <FieldError />
+                  </TextField>
 
-                  <Select.Popover>
-                    <ListBox>
-                      {carTypeOptions.map((item) => (
-                        <ListBox.Item key={item.id} id={item.id}>
-                          {item.label}
-                        </ListBox.Item>
-                      ))}
-                    </ListBox>
-                  </Select.Popover>
-                </Select>
+                  <TextField isRequired name="pickupLocation">
+                    <Label>Pickup Location</Label>
+                    <Input
+                      value={formValues.pickupLocation}
+                      onChange={handleFieldChange("pickupLocation")}
+                    />
+                    <FieldError />
+                  </TextField>
 
-                <TextField
-                  isRequired
-                  name="seatCapacity"
-                  defaultValue={seatCapacity}
-                >
-                  <Label>Seat Capacity</Label>
-                  <Input type="number" />
-                  <FieldError />
-                </TextField>
+                  <Select
+                    name="availabilityStatus"
+                    selectedKeys={getSelectedKeys(
+                      formValues.availabilityStatus,
+                    )}
+                    onSelectionChange={handleSelectChange("availabilityStatus")}
+                  >
+                    <Label>Availability</Label>
+                    <Select.Trigger>
+                      <Select.Value />
+                      <Select.Indicator />
+                    </Select.Trigger>
+                    <Select.Popover>
+                      <ListBox>
+                        {availabilityOptions.map((option) => (
+                          <ListBox.Item id={option.id} key={option.id}>
+                            {option.label}
+                          </ListBox.Item>
+                        ))}
+                      </ListBox>
+                    </Select.Popover>
+                  </Select>
 
-                <TextField
-                  isRequired
-                  name="pickupLocation"
-                  defaultValue={pickupLocation}
-                >
-                  <Label>Pickup Location</Label>
-                  <Input />
-                  <FieldError />
-                </TextField>
+                  <Select
+                    name="transmission"
+                    selectedKeys={getSelectedKeys(formValues.transmission)}
+                    onSelectionChange={handleSelectChange("transmission")}
+                  >
+                    <Label>Transmission</Label>
+                    <Select.Trigger>
+                      <Select.Value />
+                      <Select.Indicator />
+                    </Select.Trigger>
+                    <Select.Popover>
+                      <ListBox>
+                        {transmissionOptions.map((item) => (
+                          <ListBox.Item key={item.id} id={item.id}>
+                            {item.label}
+                          </ListBox.Item>
+                        ))}
+                      </ListBox>
+                    </Select.Popover>
+                  </Select>
 
-                <Select
-                  isRequired
-                  name="availabilityStatus"
-                  defaultValue={[availabilityStatus]}
-                >
-                  <Label>Availability</Label>
-                  <Select.Trigger>
-                    <Select.Value />
-                    <Select.Indicator />
-                  </Select.Trigger>
+                  <Select
+                    name="fuelType"
+                    selectedKeys={getSelectedKeys(formValues.fuelType)}
+                    onSelectionChange={handleSelectChange("fuelType")}
+                  >
+                    <Label>Fuel Type</Label>
+                    <Select.Trigger>
+                      <Select.Value />
+                      <Select.Indicator />
+                    </Select.Trigger>
+                    <Select.Popover>
+                      <ListBox>
+                        {fuelTypeOptions.map((item) => (
+                          <ListBox.Item key={item.id} id={item.id}>
+                            {item.label}
+                          </ListBox.Item>
+                        ))}
+                      </ListBox>
+                    </Select.Popover>
+                  </Select>
 
-                  <Select.Popover>
-                    <ListBox>
-                      <ListBox.Item id="available">Available</ListBox.Item>
-                      <ListBox.Item id="unavailable">Unavailable</ListBox.Item>
-                    </ListBox>
-                  </Select.Popover>
-                </Select>
+                  <TextField name="reviews">
+                    <Label>Reviews</Label>
+                    <Input
+                      type="number"
+                      value={formValues.reviews}
+                      onChange={handleFieldChange("reviews")}
+                    />
+                  </TextField>
 
-                <div className="md:col-span-2">
-                  <TextField name="imageUrl" defaultValue={imageUrl}>
-                    <Label>Image URL</Label>
-                    <Input type="url" />
+                  <TextField name="bookingCount">
+                    <Label>Bookings</Label>
+                    <Input
+                      type="number"
+                      value={formValues.bookingCount}
+                      onChange={handleFieldChange("bookingCount")}
+                    />
                   </TextField>
                 </div>
 
-                <div className="md:col-span-2">
-                  <TextField
-                    isRequired
-                    name="description"
-                    defaultValue={description}
-                  >
+                <div className="space-y-4">
+                  <TextField name="imageUrl">
+                    <Label>Main Image URL</Label>
+                    <Input
+                      type="url"
+                      value={formValues.imageUrl}
+                      onChange={handleFieldChange("imageUrl")}
+                    />
+                  </TextField>
+
+                  <TextField name="images">
+                    <Label>Gallery Images</Label>
+                    <Input
+                      value={formValues.images}
+                      onChange={handleFieldChange("images")}
+                      placeholder="Paste comma-separated image URLs"
+                    />
+                  </TextField>
+
+                  <TextField name="features">
+                    <Label>Features</Label>
+                    <Input
+                      value={formValues.features}
+                      onChange={handleFieldChange("features")}
+                      placeholder="Add comma-separated features"
+                    />
+                  </TextField>
+
+                  <TextField isRequired name="description">
                     <Label>Description</Label>
-
-                    <TextArea className="min-h-32" />
-
+                    <TextArea
+                      className="min-h-32"
+                      value={formValues.description}
+                      onChange={handleFieldChange("description")}
+                    />
                     <FieldError />
                   </TextField>
                 </div>
 
-                <div className="md:col-span-2 flex justify-end gap-3">
+                <div className="flex justify-end gap-3">
                   <Button slot="close" variant="secondary">
                     Cancel
                   </Button>
-
                   <Button type="submit" color="primary">
                     Update Car
                   </Button>

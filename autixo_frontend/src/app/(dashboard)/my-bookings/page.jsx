@@ -1,6 +1,7 @@
 import { auth } from "@/app/lib/auth";
 import { getBookingListByUserId } from "@/app/lib/datafetch";
-import { Button, Card, Chip } from "@heroui/react";
+import CancelBtn from "@/components/utlis/CancelBtn";
+import { Card, Chip } from "@heroui/react";
 import { headers } from "next/headers";
 import Image from "next/image";
 import { LuCalendarDays, LuMapPin, LuUsers } from "react-icons/lu";
@@ -12,6 +13,7 @@ export default async function BookingsPage() {
   const userId = session?.user?.id;
 
   const data = await getBookingListByUserId(userId);
+  // console.log("Booking Data:", data);
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -24,7 +26,7 @@ export default async function BookingsPage() {
             Review your current car reservations and pickup preferences.
           </p>
         </div>
-        <Chip color="primary" variant="flat" size="sm">
+        <Chip color="danger" variant="primary" size="lg">
           {data?.length
             ? `${data.length} active booking${data.length > 1 ? "s" : ""}`
             : "No bookings yet"}
@@ -36,17 +38,19 @@ export default async function BookingsPage() {
           {data.map(
             (
               {
+                _id: bookingId,
                 bookingDate,
                 driverNeeded,
+
                 car: { carName, imageUrl, seatCapacity, pickupLocation },
               },
               index,
             ) => (
               <Card
-                key={`${carName}-${index}`}
+                key={`booking-${index}`}
                 className="overflow-hidden border border-default-200 bg-background/90 shadow-sm"
               >
-                <div className="grid gap-0 md:grid-cols-[220px_1fr]">
+                <div className="grid gap-cols-1 md:grid-cols-2">
                   <div className="relative h-full min-h-48 bg-default-100">
                     <Image
                       src={imageUrl || "/assets/images/slider-image1.jpg"}
@@ -60,20 +64,18 @@ export default async function BookingsPage() {
 
                   <div className="flex flex-col p-5">
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                      <div className="min-w-0">
+                      <div className="min-w-0 relative flex-1">
                         <h2 className="text-xl font-semibold text-foreground">
                           {carName}
                         </h2>
                         <p className="mt-1 text-sm text-muted">
                           Reservation #{index + 1}
                         </p>
-                      </div>
-                      <div className="flex shrink-0">
                         <Chip
-                          color={driverNeeded ? "warning" : "success"}
-                          variant="flat"
+                          color={driverNeeded ? "accent" : "warning"}
+                          variant="primary"
                           size="sm"
-                          className="whitespace-nowrap"
+                          className="absolute -top-[20px] -right-[20px] whitespace-nowrap"
                         >
                           {driverNeeded ? "Driver needed" : "Self-drive"}
                         </Chip>
@@ -85,7 +87,9 @@ export default async function BookingsPage() {
                     <div className="grid gap-4 sm:grid-cols-2">
                       <div className="flex items-center gap-2 text-sm text-foreground-600">
                         <LuCalendarDays className="size-4 text-primary" />
-                        <span>{bookingDate}</span>
+                        <span>
+                          {new Date(bookingDate).toLocaleDateString()}
+                        </span>
                       </div>
 
                       <div className="flex items-center gap-2 text-sm text-foreground-600">
@@ -100,12 +104,7 @@ export default async function BookingsPage() {
                     </div>
 
                     <div className="mt-5 flex flex-wrap items-center gap-2">
-                      <Button size="sm" color="primary" variant="flat">
-                        View Details
-                      </Button>
-                      <Button size="sm" variant="bordered">
-                        Manage Booking
-                      </Button>
+                      <CancelBtn bookingId={bookingId} />
                     </div>
                   </div>
                 </div>

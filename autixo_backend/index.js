@@ -257,7 +257,15 @@ async function run() {
           });
         }
 
-        // 2. Check Availability
+        // 2. Prevent owner from booking their own car
+        if (car.ownerId && car.ownerId === newBooking.userId) {
+          return res.status(403).send({
+            success: false,
+            message: "You cannot book your own car",
+          });
+        }
+
+        // 3. Check Availability
         if (car.availabilityStatus !== "Available") {
           return res.status(400).send({
             success: false,
@@ -265,10 +273,10 @@ async function run() {
           });
         }
 
-        // 3. Create Booking
+        // 4. Create Booking
         const bookingResult = await bookingsCollections.insertOne(newBooking);
 
-        // 4. Update Car
+        // 5. Update Car
         await carsCollections.updateOne(
           { _id: new ObjectId(newBooking.carId) },
           {
@@ -351,6 +359,69 @@ async function run() {
         res.status(200).send(bookings);
       } catch (error) {
         console.error("Error fetching bookings:", error);
+
+        res.status(500).send({
+          success: false,
+          message: "Internal Server Error",
+        });
+      }
+    });
+
+    // delete booking by id
+    app.delete("/bookings/:id", async (req, res) => {
+      try {
+        const { id } = req.params;
+
+        if (!id) {
+          return res.status(400).send({
+            success: false,
+            message: "Booking ID is required",
+          });
+        }
+
+        // Find the booking to get the carId
+        const booking = await bookingsCollections.findOne({
+          _id: new ObjectId(id),
+        });
+
+        if (!booking) {
+          return res.status(404).send({
+            success: false,
+            message: "Booking not found",
+          });
+        }
+
+        // Delete the booking
+        const result = await bookingsCollections.deleteOne({
+          _id: new ObjectId(id),
+        });
+
+        if (result.deletedCount === 0) {
+          return res.status(404).send({
+            success: false,
+            message: "Booking not found",
+          });
+        }
+
+        // Update the car's availability status to "Available"
+        await carsCollections.updateOne(
+          { _id: new ObjectId(booking.carId) },
+          {
+            $set: {
+              availabilityStatus: "Available",
+            },
+            // $inc: {
+            //   bookingCount: -1,
+            // },
+          },
+        );
+
+        res.status(200).send({
+          success: true,
+          message: "Booking deleted successfully",
+        });
+      } catch (error) {
+        console.error("Error deleting booking:", error);
 
         res.status(500).send({
           success: false,
