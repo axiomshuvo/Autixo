@@ -1,6 +1,16 @@
+import { apiFetch } from "./ApiFetch";
+
 const getBaseUrl = () => {
   return process.env.DATA_URI || "http://localhost:5001";
 };
+
+const authHeaders = (token) =>
+  token
+    ? {
+        Authorization: `Bearer ${token}`,
+      }
+    : undefined;
+
 // getAllCars
 export const getAllCars = async (
   page = 1,
@@ -17,26 +27,21 @@ export const getAllCars = async (
     queryParams.append("carType", carType);
   }
 
-  const res = await fetch(`${baseUrl}/cars?${queryParams.toString()}`, {
+  const res = await apiFetch(`${baseUrl}/cars?${queryParams.toString()}`, {
     cache: "no-store",
   });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch cars");
+  if (typeof res === "string") {
+    throw new Error(res);
   }
 
-  return res.json();
+  return res;
 };
 
 // Random 6 Cars
 export const getRandomCars = async () => {
   try {
-    const response = await fetch(`${getBaseUrl()}/cars/random`);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const randomCars = await response.json();
-    return randomCars;
+    return await apiFetch(`/cars/random`);
   } catch (error) {
     console.error("Error fetching random cars:", error);
     return [];
@@ -44,15 +49,9 @@ export const getRandomCars = async () => {
 };
 
 // Get Car Details by ID
-
 export const getCarDetails = async (id) => {
   try {
-    const response = await fetch(`${getBaseUrl()}/explore-cars/${id}`);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const carDetails = await response.json();
-    return carDetails;
+    return await apiFetch(`/explore-cars/${id}`);
   } catch (error) {
     console.error(`Error fetching car details for ID ${id}:`, error);
     return null;
@@ -61,38 +60,19 @@ export const getCarDetails = async (id) => {
 
 // added Car
 export const createCar = async (payload) => {
-  const response = await fetch(`${getBaseUrl()}/add-car`, {
+  return apiFetch(`/add-car`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
     body: JSON.stringify(payload),
   });
-
-  const data = await response.json().catch(() => ({}));
-
-  if (!response.ok) {
-    throw new Error(data.error || "Failed to create car");
-  }
-  return {
-    ok: response.ok,
-    status: response.status,
-    data,
-  };
 };
 
 // Get My Added Cars
-export const getMyAddedCars = async (ownerId) => {
+export const getMyAddedCars = async (ownerId, token) => {
   try {
-    const response = await fetch(`${getBaseUrl()}/my-added-cars/${ownerId}`, {
+    return await apiFetch(`/my-added-cars/${ownerId}`, {
       cache: "no-store",
+      headers: authHeaders(token),
     });
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch cars");
-    }
-
-    return await response.json();
   } catch (error) {
     console.error("Error fetching my added cars:", error);
     return [];
@@ -101,48 +81,25 @@ export const getMyAddedCars = async (ownerId) => {
 
 // Delete Car by ID
 export const deleteCar = async (id) => {
-  const response = await fetch(`${getBaseUrl()}/delete-car/${id}`, {
+  return apiFetch(`/delete-car/${id}`, {
     method: "DELETE",
   });
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || "Delete failed");
-  }
-
-  return data;
 };
 
 // Update Car by ID
 export const updateCar = async (id, payload) => {
-  const res = await fetch(`${getBaseUrl()}/cars/${id}`, {
+  return apiFetch(`/cars/${id}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
     body: JSON.stringify(payload),
   });
-  console.log(res);
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    throw new Error(data.error || "Failed to update car");
-  }
-
-  return data;
 };
 
 // get User Details by ID
-export const getUserDetails = async (id) => {
+export const getUserDetails = async (id, token) => {
   try {
-    const response = await fetch(`${getBaseUrl()}/user/${id}`);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const userDetails = await response.json();
-    return userDetails;
+    return await apiFetch(`/user/${id}`, {
+      headers: authHeaders(token),
+    });
   } catch (error) {
     console.error(`Error fetching user details for ID ${id}:`, error);
     return null;
@@ -151,40 +108,22 @@ export const getUserDetails = async (id) => {
 
 // update User Details by ID
 export const updateUserDetails = async (id, payload) => {
-  const res = await fetch(`${getBaseUrl()}/user/${id}`, {
+  return apiFetch(`/user/${id}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
     body: JSON.stringify(payload),
   });
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    throw new Error(data.error || "Failed to update user details");
-  }
-
-  return data;
 };
 
 // Make Booking List by User ID
 export const addBooking = async (payload) => {
-  console.log("Booking Payload:", payload);
   try {
-    const response = await fetch(`${getBaseUrl()}/bookings`, {
+    const data = await apiFetch(`/bookings`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify(payload),
     });
 
-    const data = await response.json();
-
-    if (!response.ok || !data.success) {
-      // Use the backend's message if available
-      throw new Error(data.message || "Failed to add booking");
+    if (!data?.success) {
+      throw new Error(data?.message || "Failed to add booking");
     }
 
     return data;
@@ -193,18 +132,14 @@ export const addBooking = async (payload) => {
     throw error;
   }
 };
+
 // Get Booking List by User ID
-export const getBookingListByUserId = async (userId) => {
+export const getBookingListByUserId = async (userId, token) => {
   try {
-    const response = await fetch(`${getBaseUrl()}/bookings/user/${userId}`, {
+    return await apiFetch(`/bookings/user/${userId}`, {
       cache: "no-store",
+      headers: authHeaders(token),
     });
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch bookings");
-    }
-
-    return await response.json();
   } catch (error) {
     console.error("Error fetching booking list:", error);
     return [];
@@ -214,15 +149,9 @@ export const getBookingListByUserId = async (userId) => {
 // Delete Booking by ID
 export const deleteBooking = async (bookingId) => {
   try {
-    const response = await fetch(`${getBaseUrl()}/bookings/${bookingId}`, {
+    return await apiFetch(`/bookings/${bookingId}`, {
       method: "DELETE",
     });
-
-    if (!response.ok) {
-      throw new Error("Failed to delete booking");
-    }
-
-    return await response.json();
   } catch (error) {
     console.error("Error deleting booking:", error);
     throw error;

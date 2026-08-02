@@ -8,13 +8,18 @@ import Image from "next/image";
 export default async function ProfilePage() {
   // const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
+  const requestHeaders = await headers();
   const session = await auth.api.getSession({
-    headers: await headers(),
+    headers: requestHeaders,
   });
+  const tokenResponse = await auth.api.getToken({
+    headers: requestHeaders,
+  });
+  const token = tokenResponse?.token;
 
   const ownerId = session.user.id;
   // console.log("Owner ID:", ownerId);
-  const userDetails = await getUserDetails(ownerId);
+  const userDetails = await getUserDetails(ownerId, token);
   // console.log("User Details:", userDetails);
   const {
     name,

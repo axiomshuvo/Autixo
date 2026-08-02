@@ -120,7 +120,7 @@ export default function AddCardPage() {
       e.target.reset();
     } catch (error) {
       console.error("Error adding car:", error);
-      toast.error(error.message || "Error adding car");
+      toast.danger(error.message || "Error adding car");
     } finally {
       setIsSubmitting(false);
     }

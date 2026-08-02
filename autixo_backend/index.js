@@ -19,6 +19,11 @@ app.get("/", (req, res) => {
 // MONGODB SETUP
 
 const { MongoClient, ServerApiVersion } = require("mongodb");
+const {
+  jwtVerify,
+  createLocalJWKSet,
+  createRemoteJWKSet,
+} = require("jose-cjs");
 const uri = process.env.MONGODB_URI;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -29,6 +34,31 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
+
+// JWKS setup for JWT verification
+const JWKS = createRemoteJWKSet(
+  new URL(`${process.env.CLIENT_URL}/api/auth/jwks`),
+);
+
+// verify JWT token
+const verifyJWT = async (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ message: "Unauthorized access" });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const { payload } = await jwtVerify(token, JWKS);
+    req.user = payload;
+    next();
+  } catch (error) {
+    console.error("JWT verification failed:", error);
+    return res.status(403).json({ message: "Forbidden access" });
+  }
+};
 
 async function run() {
   try {
@@ -109,7 +139,7 @@ async function run() {
     });
 
     // Add Car to the database
-    app.post("/add-car", async (req, res) => {
+    app.post("/add-car", verifyJWT, async (req, res) => {
       try {
         const newCar = req.body;
         const result = await carsCollections.insertOne(newCar);
@@ -128,7 +158,7 @@ async function run() {
     });
 
     // Get My Added Cars by Owner ID
-    app.get("/my-added-cars/:ownerId", async (req, res) => {
+    app.get("/my-added-cars/:ownerId", verifyJWT, async (req, res) => {
       try {
         const { ownerId } = req.params;
 
@@ -152,8 +182,8 @@ async function run() {
       }
     });
 
-    // // Delete Car by ID
-    app.delete("/delete-car/:id", async (req, res) => {
+    // Delete Car by ID
+    app.delete("/delete-car/:id", verifyJWT, async (req, res) => {
       try {
         const { id } = req.params;
 
@@ -190,7 +220,7 @@ async function run() {
     });
 
     // update car by id
-    app.put("/cars/:id", async (req, res) => {
+    app.put("/cars/:id", verifyJWT, async (req, res) => {
       const { id } = req.params;
 
       const result = await carsCollections.updateOne(
@@ -204,7 +234,7 @@ async function run() {
     });
 
     // get user details by id
-    app.get("/user/:id", async (req, res) => {
+    app.get("/user/:id", verifyJWT, async (req, res) => {
       try {
         const id = req.params.id;
         const user = await usersCollections.findOne({ _id: new ObjectId(id) });
@@ -218,7 +248,7 @@ async function run() {
     });
 
     // Update user details by id
-    app.put("/user/:id", async (req, res) => {
+    app.put("/user/:id", verifyJWT, async (req, res) => {
       try {
         const id = req.params.id;
         const updatedUser = req.body;
@@ -239,13 +269,11 @@ async function run() {
     });
 
     // Add Bookings to the database
-
-    app.post("/bookings", async (req, res) => {
+    app.post("/bookings", verifyJWT, async (req, res) => {
       try {
         const newBooking = req.body;
         console.log("New Booking Request:", newBooking);
 
-        // 1. Find Car
         const car = await carsCollections.findOne({
           _id: new ObjectId(newBooking.carId),
         });
@@ -257,7 +285,6 @@ async function run() {
           });
         }
 
-        // 2. Prevent owner from booking their own car
         if (car.ownerId && car.ownerId === newBooking.userId) {
           return res.status(403).send({
             success: false,
@@ -265,7 +292,6 @@ async function run() {
           });
         }
 
-        // 3. Check Availability
         if (car.availabilityStatus !== "Available") {
           return res.status(400).send({
             success: false,
@@ -273,10 +299,8 @@ async function run() {
           });
         }
 
-        // 4. Create Booking
         const bookingResult = await bookingsCollections.insertOne(newBooking);
 
-        // 5. Update Car
         await carsCollections.updateOne(
           { _id: new ObjectId(newBooking.carId) },
           {
@@ -287,10 +311,6 @@ async function run() {
               bookingCount: 1,
             },
           },
-        );
-
-        console.log(
-          `New booking added with id: ${bookingResult.insertedId}, User: ${newBooking.userId}`,
         );
 
         res.status(201).send({
@@ -309,7 +329,7 @@ async function run() {
     });
 
     // Get Bookings by User ID
-    app.get("/bookings/user/:userId", async (req, res) => {
+    app.get("/bookings/user/:userId", verifyJWT, async (req, res) => {
       try {
         const { userId } = req.params;
 
@@ -368,7 +388,7 @@ async function run() {
     });
 
     // delete booking by id
-    app.delete("/bookings/:id", async (req, res) => {
+    app.delete("/bookings/:id", verifyJWT, async (req, res) => {
       try {
         const { id } = req.params;
 
@@ -379,7 +399,6 @@ async function run() {
           });
         }
 
-        // Find the booking to get the carId
         const booking = await bookingsCollections.findOne({
           _id: new ObjectId(id),
         });
@@ -391,7 +410,6 @@ async function run() {
           });
         }
 
-        // Delete the booking
         const result = await bookingsCollections.deleteOne({
           _id: new ObjectId(id),
         });
@@ -403,16 +421,12 @@ async function run() {
           });
         }
 
-        // Update the car's availability status to "Available"
         await carsCollections.updateOne(
           { _id: new ObjectId(booking.carId) },
           {
             $set: {
               availabilityStatus: "Available",
             },
-            // $inc: {
-            //   bookingCount: -1,
-            // },
           },
         );
 
@@ -429,7 +443,6 @@ async function run() {
         });
       }
     });
-
     //
     //
     //

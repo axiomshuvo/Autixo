@@ -14,9 +14,14 @@ const statusColorMap = {
 };
 
 export default async function MyAddedCarPage() {
+  const requestHeaders = await headers();
   const session = await auth.api.getSession({
-    headers: await headers(),
+    headers: requestHeaders,
   });
+  const tokenResponse = await auth.api.getToken({
+    headers: requestHeaders,
+  });
+  const token = tokenResponse?.token;
 
   if (!session) {
     return <div>Please login first.</div>;
@@ -24,7 +29,7 @@ export default async function MyAddedCarPage() {
 
   const ownerId = session.user.id;
 
-  const myAddedCars = await getMyAddedCars(ownerId);
+  const myAddedCars = await getMyAddedCars(ownerId, token);
   if (!myAddedCars || myAddedCars.length === 0) {
     return <EmptyCars />;
   }

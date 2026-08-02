@@ -29,7 +29,7 @@ export default function ThemeController() {
 
   const handleChange = (selected) => {
     setIsDark(selected);
-    console.log("work");
+    // console.log("work");
     const theme = selected ? "dark" : "light";
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);

@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { nextCookies } from "better-auth/next-js";
+import { jwt } from "better-auth/plugins";
 import { MongoClient } from "mongodb";
 
 const client = new MongoClient(process.env.MONGODB_URI);
@@ -29,6 +30,11 @@ export const auth = betterAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     },
   },
+  session: {
+    cookieCache: true,
+    strategy: "jwt",
+    maxAge: 60 * 60 * 24 * 7, // 7 days
+  },
   // nextCookies() must stay last in the plugins array.
-  plugins: [nextCookies()],
+  plugins: [jwt(), nextCookies()],
 });

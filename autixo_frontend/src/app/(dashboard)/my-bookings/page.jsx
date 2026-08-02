@@ -7,12 +7,17 @@ import Image from "next/image";
 import { LuCalendarDays, LuMapPin, LuUsers } from "react-icons/lu";
 
 export default async function BookingsPage() {
+  const requestHeaders = await headers();
   const session = await auth.api.getSession({
-    headers: await headers(),
+    headers: requestHeaders,
   });
+  const tokenResponse = await auth.api.getToken({
+    headers: requestHeaders,
+  });
+  const token = tokenResponse?.token;
   const userId = session?.user?.id;
 
-  const data = await getBookingListByUserId(userId);
+  const data = await getBookingListByUserId(userId, token);
   // console.log("Booking Data:", data);
 
   return (

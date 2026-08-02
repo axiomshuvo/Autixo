@@ -101,9 +101,14 @@ const statusColorMap = {
 };
 
 export default async function DashBoardPage() {
-  const session = await auth.api.getSession({ headers: await headers() });
+  const requestHeaders = await headers();
+  const session = await auth.api.getSession({ headers: requestHeaders });
+  const tokenResponse = await auth.api.getToken({
+    headers: requestHeaders,
+  });
+  const token = tokenResponse?.token;
   const ownerId = session?.user?.id;
-  const userDetails = ownerId ? await getUserDetails(ownerId) : null;
+  const userDetails = ownerId ? await getUserDetails(ownerId, token) : null;
 
   const rawName =
     userDetails?.name || session?.user?.name || session?.user?.email || "";
