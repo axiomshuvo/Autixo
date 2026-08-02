@@ -14,7 +14,7 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { HiEye, HiEyeSlash } from "react-icons/hi2";
 
@@ -33,12 +33,11 @@ const getSafeRedirectPath = (redirectValue) => {
   return trimmed;
 };
 
-export default function LoginPage() {
+function LoginPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(null); // null | "credentials" | "google"
-
+  const [loading, setLoading] = useState(null);
   const redirectTo = getSafeRedirectPath(searchParams.get("redirect"));
   const isBusy = loading !== null;
 
@@ -186,5 +185,21 @@ export default function LoginPage() {
         </Link>
       </p>
     </Card>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen items-center justify-center px-4 py-10">
+          <Card className="w-full max-w-md rounded-2xl p-8 text-foreground">
+            <p className="text-sm text-muted">Loading login form...</p>
+          </Card>
+        </div>
+      }
+    >
+      <LoginPageContent />
+    </Suspense>
   );
 }
