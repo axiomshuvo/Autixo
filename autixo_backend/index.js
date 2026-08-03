@@ -142,14 +142,35 @@ async function run() {
     app.post("/add-car", verifyJWT, async (req, res) => {
       try {
         const newCar = req.body;
+
+        // 1. Get the user ID from the verified JWT payload
+        // Better Auth typically stores this in req.user.id or req.user.sub
+        const userId = req.user?.id || req.user?.sub || req.user?.userId;
+
+        if (!userId) {
+          return res.status(400).send({
+            success: false,
+            message: "User ID missing from authentication token",
+          });
+        }
+
+        // 2. Force the ownerId onto the car object BEFORE saving
+        newCar.ownerId = userId;
+
+        // 3. Save to database
         const result = await carsCollections.insertOne(newCar);
+
         console.log(
-          `New car added with id: ${result.insertedId} , ${newCar.ownerId}`,
+          `New car added with id: ${result.insertedId} , Owner: ${newCar.ownerId}`,
         );
-        res
-          .status(201)
-          .send({ message: "Car added successfully", id: result.insertedId });
+
+        res.status(201).send({
+          success: true,
+          message: "Car added successfully",
+          id: result.insertedId,
+        });
       } catch (error) {
+        console.error("Add Car Error:", error);
         res.status(500).json({
           success: false,
           message: error.message,

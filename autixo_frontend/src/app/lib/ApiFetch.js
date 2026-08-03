@@ -1,67 +1,72 @@
-const getBaseUrl = () => {
-  const baseUrl = process.env.DATA_URI || "http://localhost:5001";
-  return baseUrl.replace(/\/$/, "");
+const getAuthBaseUrl = () => {
+  return (
+    process.env.NEXT_PUBLIC_BETTER_AUTH_URL ||
+    process.env.BETTER_AUTH_URL ||
+    "/api/auth"
+  )
+    .trim()
+    .replace(/\/$/, "");
 };
 
-const getAuthBaseUrl = () => {
-  const rawBase =
-    process.env.NEXT_PUBLIC_BETTER_AUTH_URL?.trim() || "/api/auth";
-  const base = rawBase.replace(/\/$/, "");
-
-  if (base.endsWith("/api/auth")) {
-    return base;
-  }
-
-  if (base.startsWith("http://") || base.startsWith("https://")) {
-    return `${base}/api/auth`;
-  }
-
-  return "/api/auth";
+const getDataBaseUrl = () => {
+  return (
+    process.env.NEXT_PUBLIC_DATA_URI ||
+    process.env.DATA_URI ||
+    process.env.NEXT_PUBLIC_API_URL ||
+    process.env.API_URL ||
+    "/api/proxy"
+  )
+    .trim()
+    .replace(/\/$/, "");
 };
 
 const getJwtToken = async () => {
-  if (typeof window === "undefined") {
-    return null;
-  }
+  if (typeof window === "undefined") return null;
 
   try {
-    const authBase = getAuthBaseUrl();
-    const tokenResponse = await fetch(`${authBase}/token`, {
+    let authBase = getAuthBaseUrl();
+
+    // Ensure the path includes /api/auth so fetch hits /api/auth/token
+    if (!authBase.includes("/api/auth")) {
+      authBase = `${authBase}/api/auth`;
+    }
+
+    const res = await fetch(`${authBase}/token`, {
       method: "GET",
       credentials: "include",
     });
-    const tokenData = await tokenResponse.json();
 
-    if (tokenData?.token) {
-      return tokenData.token;
-    }
+    const data = await res.json();
+    return data?.token || null;
   } catch (error) {
-    console.warn("Failed to get Better Auth JWT", error);
+    console.warn("Failed to get Better Auth JWT:", error);
+    return null;
   }
-  return null;
 };
 
 export async function apiFetch(endpoint, options = {}) {
   const headers = new Headers(options.headers || {});
 
+  // Default to JSON unless sending FormData
   if (!headers.has("Content-Type") && !(options.body instanceof FormData)) {
     headers.set("Content-Type", "application/json");
   }
 
-  const token = await getJwtToken();
-  if (token) {
-    headers.set("Authorization", `Bearer ${token}`);
+  // Auto-attach client token if not provided manually in options
+  const clientToken = await getJwtToken();
+  if (clientToken && !headers.has("Authorization")) {
+    headers.set("Authorization", `Bearer ${clientToken}`);
   }
 
-  const normalizedEndpoint =
-    endpoint.startsWith("http://") || endpoint.startsWith("https://")
-      ? endpoint
-      : `${getBaseUrl()}${endpoint.startsWith("/") ? endpoint : `/${endpoint}`}`;
+  const baseUrl = getDataBaseUrl();
+  const url = endpoint.startsWith("http")
+    ? endpoint
+    : `${baseUrl}${endpoint.startsWith("/") ? endpoint : `/${endpoint}`}`;
 
-  const response = await fetch(normalizedEndpoint, {
+  const response = await fetch(url, {
     ...options,
     headers,
-    credentials: "omit",
+    credentials: "include",
   });
 
   const rawText = await response.text();
@@ -70,15 +75,14 @@ export async function apiFetch(endpoint, options = {}) {
   try {
     parsedData = JSON.parse(rawText);
   } catch {
-    // Keep as text if the response is not JSON.
+    // Keep as text if response is not JSON
   }
 
+  // Throw simplified errors for non-2xx responses
   if (!response.ok) {
-    const message =
-      (parsedData && parsedData.message) ||
-      parsedData?.error ||
-      `HTTP ${response.status}`;
-    throw new Error(message);
+    throw new Error(
+      parsedData?.message || parsedData?.error || `HTTP ${response.status}`,
+    );
   }
 
   return parsedData;

@@ -87,6 +87,9 @@ export default function AddCardPage() {
       .map((item) => item.trim())
       .filter(Boolean);
 
+  const getSessionUserId = (user) =>
+    user?.id || user?._id || user?.userId || user?.sub || user?.email || null;
+
   const addCarHandler = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -94,10 +97,14 @@ export default function AddCardPage() {
     try {
       const features = normalizeList(formValues.features);
       const galleryImages = normalizeList(formValues.images);
+      const ownerId = getSessionUserId(session?.user);
 
       const payload = {
         ...formValues,
-        ownerId: session?.user?.id,
+        ownerId,
+        userId: ownerId,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
         dailyRentPrice: Number(formValues.dailyRentPrice || 0),
         seatCapacity: Number(formValues.seatCapacity || 0),
         reviews: Number(formValues.reviews || 0),
