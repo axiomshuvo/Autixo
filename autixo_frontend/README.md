@@ -42,24 +42,24 @@ Open [http://localhost:3000](http://localhost:3000).
 Create a `.env.local` file with values similar to:
 
 ```env
-NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
+NEXT_PUBLIC_AUTH_URL=http://localhost:3000
 BETTER_AUTH_SECRET=your_secret_here
 BETTER_AUTH_URL=http://localhost:3000
-DATA_URI=http://localhost:5000
+NEXT_PUBLIC_API_URL=http://localhost:5000
 MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/?appName=<app>
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
-| Variable                      | Used for                                          |
-| ----------------------------- | ------------------------------------------------- |
-| `NEXT_PUBLIC_BETTER_AUTH_URL` | Client-side Better Auth base URL                  |
-| `BETTER_AUTH_SECRET`          | Better Auth signing secret                        |
-| `BETTER_AUTH_URL`             | Better Auth server base URL                       |
-| `DATA_URI`                    | Backend API base URL for car and booking requests |
-| `MONGODB_URI`                 | Better Auth MongoDB adapter connection            |
-| `GOOGLE_CLIENT_ID`            | Google OAuth provider setup                       |
-| `GOOGLE_CLIENT_SECRET`        | Google OAuth provider setup                       |
+| Variable               | Used for                                          |
+| ---------------------- | ------------------------------------------------- |
+| `NEXT_PUBLIC_AUTH_URL` | Client-side Auth base URL                         |
+| `BETTER_AUTH_SECRET`   | Better Auth signing secret                        |
+| `BETTER_AUTH_URL`      | Better Auth server base URL                       |
+| `NEXT_PUBLIC_API_URL`  | Backend API base URL for car and booking requests |
+| `MONGODB_URI`          | Better Auth MongoDB adapter connection            |
+| `GOOGLE_CLIENT_ID`     | Google OAuth provider setup                       |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth provider setup                       |
 
 ## Main Routes
 

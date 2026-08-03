@@ -1,77 +1,84 @@
 import { apiFetch } from "./ApiFetch";
 
-const authHeaders = (token) =>
-  token ? { Authorization: `Bearer ${token}` } : undefined;
+// ==================== Cars ====================
 
-// Get All Cars
 export const getAllCars = async (
   page = 1,
   limit = 12,
   search = "",
   carType = "",
 ) => {
-  const params = new URLSearchParams({ page, limit });
+  const params = new URLSearchParams({
+    page: String(page),
+    limit: String(limit),
+  });
+
   if (search) params.append("search", search);
   if (carType) params.append("carType", carType);
 
-  return apiFetch(`/cars?${params.toString()}`, { cache: "no-store" });
+  return apiFetch(`/cars?${params}`);
 };
 
-// Random 6 Cars
-export const getRandomCars = () => apiFetch(`/cars/random`).catch(() => []);
+export const getRandomCars = () => apiFetch("/cars/random").catch(() => []);
 
-// Get Car Details by ID
 export const getCarDetails = (id) =>
   apiFetch(`/explore-cars/${id}`).catch(() => null);
 
-// Create Car
-export const createCar = (payload) => {
-  const normalizedPayload = {
-    ...payload,
-    ownerId: payload?.ownerId || payload?.userId || "",
-    userId: payload?.userId || payload?.ownerId || "",
-  };
-
-  return apiFetch(`/add-car`, {
+export const createCar = (data) =>
+  apiFetch("/add-car", {
     method: "POST",
-    body: JSON.stringify(normalizedPayload),
+    body: JSON.stringify(data),
   });
-};
 
-// Get My Added Cars
+export const updateCar = (id, data) =>
+  apiFetch(`/cars/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+  });
+
+export const deleteCar = (id) =>
+  apiFetch(`/delete-car/${id}`, {
+    method: "DELETE",
+  });
+
 export const getMyAddedCars = (ownerId, token) =>
   apiFetch(`/my-added-cars/${ownerId}`, {
-    cache: "no-store",
-    headers: authHeaders(token),
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   }).catch(() => []);
 
-// Delete Car by ID
-export const deleteCar = (id) =>
-  apiFetch(`/delete-car/${id}`, { method: "DELETE" });
+// ==================== Users ====================
 
-// Update Car by ID
-export const updateCar = (id, payload) =>
-  apiFetch(`/cars/${id}`, { method: "PUT", body: JSON.stringify(payload) });
-
-// Get User Details by ID
 export const getUserDetails = (id, token) =>
-  apiFetch(`/user/${id}`, { headers: authHeaders(token) }).catch(() => null);
+  apiFetch(`/user/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).catch(() => null);
 
-// Update User Details by ID
-export const updateUserDetails = (id, payload) =>
-  apiFetch(`/user/${id}`, { method: "PUT", body: JSON.stringify(payload) });
+export const updateUserDetails = (id, data) =>
+  apiFetch(`/user/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+  });
 
-// Add Booking
-export const addBooking = (payload) =>
-  apiFetch(`/bookings`, { method: "POST", body: JSON.stringify(payload) });
+// ==================== Bookings ====================
 
-// Get Booking List by User ID
+export const addBooking = (data) =>
+  apiFetch("/bookings", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+
 export const getBookingListByUserId = (userId, token) =>
   apiFetch(`/bookings/user/${userId}`, {
-    cache: "no-store",
-    headers: authHeaders(token),
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   }).catch(() => []);
 
-// Delete Booking by ID
 export const deleteBooking = (bookingId) =>
-  apiFetch(`/bookings/${bookingId}`, { method: "DELETE" });
+  apiFetch(`/bookings/${bookingId}`, {
+    method: "DELETE",
+  });

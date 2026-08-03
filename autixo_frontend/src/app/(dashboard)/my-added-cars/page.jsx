@@ -3,9 +3,10 @@ import { getMyAddedCars } from "@/app/lib/datafetch";
 import DeleteCar from "@/components/utlis/DeleteCar";
 import EditCar from "@/components/utlis/EditCar";
 import EmptyCars from "@/components/utlis/EmptyCars";
-import { Chip, Table } from "@heroui/react";
+import { buttonVariants, Chip, Table } from "@heroui/react";
 import { headers } from "next/headers";
 import Image from "next/image";
+import Link from "next/link";
 
 const statusColorMap = {
   available: "success",
@@ -83,6 +84,15 @@ export default async function MyAddedCarPage() {
                   <div className="flex gap-2">
                     <EditCar carId={car._id} carData={car} />
                     <DeleteCar carId={car._id} />
+                    <Link
+                      href={`/explore-cars/${car._id}`}
+                      className={buttonVariants({
+                        variant: "tertiary",
+                        size: "sm",
+                      })}
+                    >
+                      View
+                    </Link>
                   </div>
                 </Table.Cell>
               </Table.Row>

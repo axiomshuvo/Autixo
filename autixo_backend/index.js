@@ -8,7 +8,13 @@ const { ObjectId } = require("mongodb");
 
 const app = express();
 const port = process.env.PORT;
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  }),
+);
 app.use(express.json());
 
 // basic response for the root route

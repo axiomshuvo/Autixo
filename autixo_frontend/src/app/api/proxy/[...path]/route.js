@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
 const getBackendBaseUrl = () => {
-  const rawBase = process.env.DATA_URI?.trim() || process.env.API_URL?.trim();
+  const rawBase =
+    process.env.NEXT_PUBLIC_API_URL?.trim() || process.env.API_URL?.trim();
   return rawBase ? rawBase.replace(/\/$/, "") : "";
 };
 
